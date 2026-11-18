@@ -39,25 +39,25 @@
   <script src="assets/app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="#top" aria-label="Bouncer Ignis home">
-        <img src="assets/brand/ignis-128.png" width="28" height="28" alt="" />
+        <img src="assets/brand/ignis-ball.png" width="28" height="28" alt="" />
         <span>Bouncer Ignis</span>
       </a>
-      <nav class="site-nav" aria-label="main">
-        <a href="#features">features</a>
-        <a href="#compare">vs bouncer</a>
-        <a href="#claude-code">claude code</a>
-        <a href="#download">download</a>
-        <a href="#faq">faq</a>
-        <a href="docs.html#/install">docs</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#features">Features</a>
+        <a href="#compare">vs Bouncer</a>
+        <a href="#claude-code">Claude Code</a>
+        <a href="#download">Download</a>
+        <a href="#faq">FAQ</a>
+        <a href="docs.html#/install">Docs</a>
       </nav>
       <div class="header-tools">
         <a class="back" href="https://bouncer-ai.pages.dev">Bouncer</a>
-        <button class="btn btn-quiet btn-icon" type="button" id="theme-toggle" aria-label="switch to light theme">
+        <button class="btn btn-quiet btn-icon" type="button" id="theme-toggle" aria-label="Switch to light theme">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
         </button>
         <a class="gh" href="https://github.com/shankar-sachin/get-ignis" aria-label="Bouncer Ignis on GitHub" title="GitHub"><svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
@@ -70,7 +70,7 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div>
-          <img class="hero-logo" src="assets/brand/ignis-256.png" width="112" height="112" alt="Bouncer Ignis logo" />
+          <img class="hero-logo" src="assets/brand/ignis-fire.png" width="150" height="137" alt="Bouncer Ignis logo" />
           <span class="badge" id="release-badge"><span class="dot" aria-hidden="true"></span><span data-release-label>macOS, Apple silicon</span></span>
           <h1 id="hero-title">Local AI, with the weight taken off.</h1>
           <p class="lede">Ignis is the lean Rust edition of Bouncer. It has the same model library and the same look, in a fraction of the memory. Chat, code and build Rebound bots with models that run on your Mac.</p>
@@ -80,7 +80,7 @@
           <a class="btn btn-primary" id="hero-download" href="https://github.com/shankar-sachin/get-ignis/releases">Download for macOS</a>
           <div class="cmd" style="max-width: 640px; width: 100%; text-align: left">
             <code>curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh</code>
-            <button class="btn copy" type="button" data-copy="curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh">copy</button>
+            <button class="btn copy" type="button" data-copy="curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh">Copy</button>
           </div>
           <p class="small">macOS on Apple silicon for now. Intel, Windows and Linux are <a href="#faq">coming</a>.</p>
         </div>
@@ -95,97 +95,97 @@
     <section id="features" aria-labelledby="features-title">
       <div class="wrap">
         <div class="section-head">
-          <span class="eyebrow">the surfaces</span>
+          <span class="eyebrow">The surfaces</span>
           <h2 id="features-title">One small app, four ways to work.</h2>
           <p>Everything runs on your machine with llama.cpp. Models come from Hugging Face, and nothing you type or open leaves the computer.</p>
         </div>
 
         <div class="feature">
           <div class="copy-col">
-            <span class="kicker">chat</span>
+            <span class="kicker">Chat</span>
             <h3 style="margin-top: 8px; font-size: 1.5rem">Fast, private chat with your models.</h3>
             <p>Stream replies, expand the reasoning and pick up any conversation where you left it.</p>
             <ul>
-              <li>one model kept warm by the Ignis service</li>
-              <li>chats stored on your computer, not in an account</li>
-              <li>the same chat in the terminal with <code>bi</code></li>
+              <li>One model kept warm by the Ignis service</li>
+              <li>Chats stored on your computer, not in an account</li>
+              <li>The same chat in the terminal with <code>bi</code></li>
             </ul>
           </div>
           <figure class="shot">
             <picture><source data-scheme="dark" media="(prefers-color-scheme: dark)" srcset="assets/screens/hero-obsidian.jpg" /><source data-scheme="light" media="(prefers-color-scheme: light)" srcset="assets/screens/hero-light.jpg" /><img src="assets/screens/hero-light.jpg" width="1600" height="1000" loading="lazy" alt="Bouncer Ignis Chat with a finished reply" /></picture>
-            <figcaption>chat</figcaption>
+            <figcaption>Chat</figcaption>
           </figure>
         </div>
 
 
         <div class="feature is-flip">
           <div class="copy-col">
-            <span class="kicker">code</span>
+            <span class="kicker">Code</span>
             <h3 style="margin-top: 8px; font-size: 1.5rem">Code works on a folder and asks before it acts.</h3>
             <p>Point a model at a folder. Pick how much it may do, and read each change before you approve it. There is no editor: Code is the agent, with a terminal beside it.</p>
             <ul>
-              <li>modes, diffs you approve and checkpoints you can rewind to</li>
-              <li>a terminal, <code>@</code> file mentions and <code>/compact</code> for long sessions</li>
-              <li>you stay in the editor you already use</li>
+              <li>Modes, diffs you approve and checkpoints you can rewind to</li>
+              <li>A terminal, <code>@</code> file mentions and <code>/compact</code> for long sessions</li>
+              <li>You stay in the editor you already use</li>
             </ul>
           </div>
           <figure class="shot">
             <picture><source data-scheme="dark" media="(prefers-color-scheme: dark)" srcset="assets/screens/code-obsidian.jpg" /><source data-scheme="light" media="(prefers-color-scheme: light)" srcset="assets/screens/code-light.jpg" /><img src="assets/screens/code-light.jpg" width="1600" height="1000" loading="lazy" alt="Ignis Code with a finished session and its diff" /></picture>
-            <figcaption>code</figcaption>
+            <figcaption>Code</figcaption>
           </figure>
         </div>
 
 
         <div class="feature">
           <div class="copy-col">
-            <span class="kicker">rebound</span>
+            <span class="kicker">Rebound</span>
             <h3 style="margin-top: 8px; font-size: 1.5rem">Make bots with a name, a memory and a routine.</h3>
             <p>Rebound bots have their own instructions, memory and chats. Give one a routine and it runs on a schedule while the service is up.</p>
             <ul>
-              <li>bots, memory and routines</li>
-              <li>chats kept apart from Chat</li>
-              <li>the same bots format as Bouncer</li>
+              <li>Bots, memory and routines</li>
+              <li>Chats kept apart from Chat</li>
+              <li>The same bots format as Bouncer</li>
             </ul>
           </div>
           <figure class="shot">
             <picture><source data-scheme="dark" media="(prefers-color-scheme: dark)" srcset="assets/screens/rebound-obsidian.jpg" /><source data-scheme="light" media="(prefers-color-scheme: light)" srcset="assets/screens/rebound-light.jpg" /><img src="assets/screens/rebound-light.jpg" width="1600" height="1000" loading="lazy" alt="Rebound with a bot chat" /></picture>
-            <figcaption>rebound</figcaption>
+            <figcaption>Rebound</figcaption>
           </figure>
         </div>
 
 
         <div class="feature is-flip">
           <div class="copy-col">
-            <span class="kicker">marketplace</span>
+            <span class="kicker">Marketplace</span>
             <h3 style="margin-top: 8px; font-size: 1.5rem">Find models that fit your Mac.</h3>
             <p>Browse GGUF models from Hugging Face. Ignis reads each model and estimates the memory it needs, so you see what will run before you download.</p>
             <ul>
-              <li>a fit estimate for every quant</li>
-              <li>your library is shared with Bouncer</li>
-              <li>packages in the bcr format install with <code>ignis install</code></li>
+              <li>A fit estimate for every quant</li>
+              <li>Your library is shared with Bouncer</li>
+              <li>Packages in the bcr format install with <code>ignis install</code></li>
             </ul>
           </div>
           <figure class="shot">
             <picture><source data-scheme="dark" media="(prefers-color-scheme: dark)" srcset="assets/screens/models-obsidian.jpg" /><source data-scheme="light" media="(prefers-color-scheme: light)" srcset="assets/screens/models-light.jpg" /><img src="assets/screens/models-light.jpg" width="1600" height="1000" loading="lazy" alt="Marketplace model detail with the quant picker" /></picture>
-            <figcaption>models</figcaption>
+            <figcaption>Models</figcaption>
           </figure>
         </div>
 
 
         <div class="feature">
           <div class="copy-col">
-            <span class="kicker">settings</span>
+            <span class="kicker">Settings</span>
             <h3 style="margin-top: 8px; font-size: 1.5rem">Settings that stay out of the way.</h3>
             <p>Themes (light, graphite and obsidian), the local API, models folder and hardware in one place.</p>
             <ul>
-              <li>the local API on 127.0.0.1:3333, this computer only</li>
-              <li>a hardware view with memory use</li>
+              <li>The local API on 127.0.0.1:3333, this computer only</li>
+              <li>A hardware view with memory use</li>
               <li>Ollama port on request</li>
             </ul>
           </div>
           <figure class="shot">
             <picture><source data-scheme="dark" media="(prefers-color-scheme: dark)" srcset="assets/screens/settings-obsidian.jpg" /><source data-scheme="light" media="(prefers-color-scheme: light)" srcset="assets/screens/settings-light.jpg" /><img src="assets/screens/settings-light.jpg" width="1600" height="1000" loading="lazy" alt="Settings with the local API section" /></picture>
-            <figcaption>settings</figcaption>
+            <figcaption>Settings</figcaption>
           </figure>
         </div>
 
@@ -197,7 +197,7 @@
       <div class="wrap">
         <div class="section-head">
           <img class="rebound-logo" src="assets/brand/rebound-256.png" width="96" height="96" alt="Rebound logo" />
-          <span class="eyebrow">rebound</span>
+          <span class="eyebrow">Rebound</span>
           <h2 id="rebound-title">Bots that keep their own context.</h2>
           <p>Rebound is where bots live. Each has a name, instructions and a memory. Routines run them on a schedule, and the reply reaches you as a desktop notification. Connectors and voice are on the way.</p>
         </div>
@@ -208,21 +208,21 @@
     <section id="compare" aria-labelledby="compare-title">
       <div class="wrap">
         <div class="section-head">
-          <span class="eyebrow">ignis and bouncer</span>
+          <span class="eyebrow">Ignis and Bouncer</span>
           <h2 id="compare-title">Ignis is the lean one.</h2>
           <p>Both apps use the same model library, package format and service protocol, so you can have both. <a href="https://bouncer-ai.pages.dev">Bouncer</a> is the full workbench. Ignis keeps the daily parts.</p>
         </div>
         <div class="table-scroll">
           <table class="compare">
-            <thead><tr><th>what</th><th>Ignis</th><th>Bouncer</th></tr></thead>
+            <thead><tr><th>What</th><th>Ignis</th><th>Bouncer</th></tr></thead>
             <tbody>
-              <tr><td>chat, code, Rebound, marketplace</td><td>yes</td><td>yes</td></tr>
-              <tr><td>terminal chat and service</td><td><code>bi</code> and <code>ignis</code></td><td><code>bouncer</code></td></tr>
-              <tr><td>local API</td><td>port 3333</td><td>port 3133</td></tr>
-              <tr><td>IDE, Studio, Lab, workflows</td><td>no</td><td>yes</td></tr>
-              <tr><td>MLX models, accounts and sync</td><td>no</td><td>yes</td></tr>
-              <tr><td>memory</td><td>a fraction of Bouncer's</td><td>an Electron app</td></tr>
-              <tr><td>platforms</td><td>macOS, Apple silicon</td><td>macOS, Windows, Linux</td></tr>
+              <tr><td>Chat, code, Rebound, marketplace</td><td>Yes</td><td>Yes</td></tr>
+              <tr><td>Terminal chat and service</td><td><code>bi</code> and <code>ignis</code></td><td><code>bouncer</code></td></tr>
+              <tr><td>Local API</td><td>Port 3333</td><td>Port 3133</td></tr>
+              <tr><td>IDE, Studio, Lab, workflows</td><td>No</td><td>Yes</td></tr>
+              <tr><td>MLX models, accounts and sync</td><td>No</td><td>Yes</td></tr>
+              <tr><td>Memory</td><td>A fraction of Bouncer's</td><td>An Electron app</td></tr>
+              <tr><td>Platforms</td><td>macOS, Apple silicon</td><td>macOS, Windows, Linux</td></tr>
             </tbody>
           </table>
         </div>
@@ -234,7 +234,7 @@
     <section id="claude-code" aria-labelledby="cc-title">
       <div class="wrap">
         <div class="section-head">
-          <span class="eyebrow">works with claude code</span>
+          <span class="eyebrow">Works with Claude Code</span>
           <h2 id="cc-title">Point Claude Code at your own model.</h2>
           <p>The Ignis local API speaks the OpenAI, Anthropic and Ollama shapes, so Claude Code can talk to a model on your machine. The API runs whenever the Ignis service does, so open the app (or run <code>ignis start</code>), then set two variables.</p>
         </div>
@@ -250,12 +250,12 @@
             <p class="hint">Slash commands and a skill for Claude Code</p>
             <div class="cmd">
               <code>/plugin marketplace add shankar-sachin/get-ignis</code>
-              <button class="btn copy" type="button" data-copy="/plugin marketplace add shankar-sachin/get-ignis">copy</button>
+              <button class="btn copy" type="button" data-copy="/plugin marketplace add shankar-sachin/get-ignis">Copy</button>
             </div>
             <div style="height: 8px"></div>
             <div class="cmd">
               <code>/plugin install ignis@get-ignis</code>
-              <button class="btn copy" type="button" data-copy="/plugin install ignis@get-ignis">copy</button>
+              <button class="btn copy" type="button" data-copy="/plugin install ignis@get-ignis">Copy</button>
             </div>
             <p>Adds <code>/ignis:status</code>, <code>/ignis:models</code>, <code>/ignis:ask</code> and <code>/ignis:serve-claude</code>, plus a skill that tells Claude when to hand a private task to your local model. <a href="https://github.com/shankar-sachin/get-ignis/tree/main/plugins">Read the plugin docs</a>.</p>
           </div>
@@ -267,7 +267,7 @@
     <section aria-labelledby="private-title">
       <div class="wrap">
         <div class="section-head">
-          <span class="eyebrow">private by design</span>
+          <span class="eyebrow">Private by design</span>
           <h2 id="private-title">It stays on your machine.</h2>
           <p>After a model is downloaded, Ignis works without a connection. Your prompts, files and chats are not sent to a server.</p>
         </div>
@@ -295,7 +295,7 @@
     <section id="download" aria-labelledby="download-title">
       <div class="wrap">
         <div class="section-head">
-          <span class="eyebrow">download</span>
+          <span class="eyebrow">Download</span>
           <h2 id="download-title">Install in one line.</h2>
           <p>The installer picks the newest release and checks it against SHA256SUMS before it installs. It puts <code>Bouncer Ignis.app</code> in Applications and links <code>ignis</code> and <code>bi</code> into <code>~/.local/bin</code>.</p>
         </div>
@@ -306,7 +306,7 @@
             <p class="hint">Terminal, bash or zsh</p>
             <div class="cmd">
               <code>curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh</code>
-              <button class="btn copy" type="button" data-copy="curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh">copy</button>
+              <button class="btn copy" type="button" data-copy="curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh">Copy</button>
             </div>
           </div>
           <div class="card">
@@ -314,7 +314,7 @@
             <p class="hint">Just <code>ignis</code> and <code>bi</code>, no app</p>
             <div class="cmd">
               <code>curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh -s -- --cli-only</code>
-              <button class="btn copy" type="button" data-copy="curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh -s -- --cli-only">copy</button>
+              <button class="btn copy" type="button" data-copy="curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh -s -- --cli-only">Copy</button>
             </div>
           </div>
         </div>
@@ -327,19 +327,19 @@
           <ul class="platforms">
             <li>
               <span><span class="name">macOS, Apple silicon: disk image</span><span class="file" data-file="dmg">Bouncer-Ignis-0.2.0-arm64.dmg</span></span>
-              <span class="state" data-state="dmg"><a href="https://github.com/shankar-sachin/get-ignis/releases">releases</a></span>
+              <span class="state" data-state="dmg"><a href="https://github.com/shankar-sachin/get-ignis/releases">Releases</a></span>
             </li>
             <li>
               <span><span class="name">macOS, Apple silicon: zip</span><span class="file" data-file="zip">Bouncer-Ignis-0.2.0-arm64-mac.zip</span></span>
-              <span class="state" data-state="zip"><a href="https://github.com/shankar-sachin/get-ignis/releases">releases</a></span>
+              <span class="state" data-state="zip"><a href="https://github.com/shankar-sachin/get-ignis/releases">Releases</a></span>
             </li>
             <li>
               <span><span class="name">Terminal tools: ignis and bi</span><span class="file" data-file="cli">ignis-cli-0.2.0-macos-arm64.tar.gz</span></span>
-              <span class="state" data-state="cli"><a href="https://github.com/shankar-sachin/get-ignis/releases">releases</a></span>
+              <span class="state" data-state="cli"><a href="https://github.com/shankar-sachin/get-ignis/releases">Releases</a></span>
             </li>
             <li>
               <span><span class="name">Intel Mac, Windows, Linux</span></span>
-              <span class="state">coming soon</span>
+              <span class="state">Coming soon</span>
             </li>
           </ul>
           <p class="download-note"><a href="https://github.com/shankar-sachin/get-ignis/releases">All releases on GitHub</a></p>
@@ -356,7 +356,7 @@
     <section id="faq" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="section-head">
-          <span class="eyebrow">faq</span>
+          <span class="eyebrow">FAQ</span>
           <h2 id="faq-title">Questions, answered plainly.</h2>
         </div>
         <div class="faq">
@@ -395,7 +395,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <p>© Sachin Shankar. All rights reserved.</p>
-      <nav aria-label="footer">
+      <nav aria-label="Footer">
         <a href="https://bouncer-ai.pages.dev">Bouncer</a>
         <a href="https://github.com/shankar-sachin/get-ignis/releases">Releases</a>
         <a href="https://github.com/shankar-sachin/get-ignis/blob/main/scripts/install.sh">Install script</a>

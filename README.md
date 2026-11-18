@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="site/assets/brand/ignis-256.png" width="140" alt="Bouncer Ignis logo" />
+  <img src="site/assets/brand/ignis-fire.png" width="140" alt="Bouncer Ignis logo" />
 </p>
 
 <h1 align="center">Bouncer Ignis</h1>
@@ -13,6 +13,7 @@
   <a href="https://github.com/shankar-sachin/get-ignis/releases/latest"><img src="https://img.shields.io/github/v/release/shankar-sachin/get-ignis?label=latest&color=be3a1c" alt="Latest release" /></a>
   <a href="https://github.com/shankar-sachin/get-ignis/releases"><img src="https://img.shields.io/github/downloads/shankar-sachin/get-ignis/total?color=be3a1c" alt="Downloads" /></a>
   <img src="https://img.shields.io/badge/macOS%20%C2%B7%20Apple%20silicon-555" alt="macOS on Apple silicon" />
+  <img src="https://img.shields.io/badge/built%20with-Rust-be3a1c?logo=rust&logoColor=white" alt="Built with Rust" />
 </p>
 
 <p align="center">

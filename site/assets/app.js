@@ -81,8 +81,8 @@
         cell.textContent = '';
         var link = document.createElement('a');
         link.href = asset.browser_download_url;
-        link.textContent = 'download';
-        link.setAttribute('aria-label', 'download ' + asset.name);
+        link.textContent = 'Download';
+        link.setAttribute('aria-label', 'Download ' + asset.name);
         cell.appendChild(link);
         if (fileEl) fileEl.textContent = asset.name;
       }
@@ -113,21 +113,21 @@
       btn.addEventListener('click', function () {
         var text = btn.getAttribute('data-copy');
         var done = function () {
-          btn.textContent = 'copied';
+          btn.textContent = 'Copied';
           setTimeout(function () {
-            btn.textContent = 'copy';
+            btn.textContent = 'Copy';
           }, 1600);
         };
         try {
           if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(text).then(done, function () {
-              btn.textContent = 'select the text';
+              btn.textContent = 'Select the text';
             });
           } else {
-            btn.textContent = 'select the text';
+            btn.textContent = 'Select the text';
           }
         } catch (e) {
-          btn.textContent = 'select the text';
+          btn.textContent = 'Select the text';
         }
       });
     });
@@ -143,8 +143,8 @@
 
   function labelToggle(btn, theme) {
     var next = theme === 'light' ? 'dark' : 'light';
-    btn.setAttribute('aria-label', 'switch to ' + next + ' theme');
-    btn.setAttribute('title', 'switch to ' + next + ' theme');
+    btn.setAttribute('aria-label', 'Switch to ' + next + ' theme');
+    btn.setAttribute('title', 'Switch to ' + next + ' theme');
   }
 
   /* Screenshots come in a light and an obsidian version. Without a stored choice the browser picks by the

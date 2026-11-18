@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="site/assets/brand/ignis-256.png" alt="" width="72" />
+<img src="site/assets/brand/ignis-ball.png" alt="" width="72" />
 
 # Bouncer Ignis license
 

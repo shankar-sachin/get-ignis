@@ -990,10 +990,9 @@ section {
 
 .hero-logo {
   display: block;
-  width: 112px;
-  height: 112px;
+  width: 150px;
+  height: auto;
   margin: 0 auto 22px;
-  border-radius: 26px;
 }
 
 .header-tools .back {
