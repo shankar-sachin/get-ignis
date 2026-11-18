@@ -29,12 +29,12 @@ curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh -s -- --dry-run
 | Option | What it does |
 | --- | --- |
 | `--dry-run` | Find the release and print what would happen. Nothing is downloaded or installed. |
-| `--version <tag>` | Install a specific release, for example `--version v0.2.0`. The default is the newest release. |
+| `--version <tag>` | Install a specific release, for example `--version v0.3.0`. The default is the newest release. |
 | `--cli-only` | Install only the `ignis` and `bi` commands, not the app. |
 
 ## Download it yourself
 
-Every release is at [Releases](https://github.com/shankar-sachin/get-ignis/releases). Names include the version, shown here as `<version>`, for example `0.2.0`.
+Every release is at [Releases](https://github.com/shankar-sachin/get-ignis/releases). Names include the version, shown here as `<version>`, for example `0.3.0`.
 
 | File | What it is |
 | --- | --- |

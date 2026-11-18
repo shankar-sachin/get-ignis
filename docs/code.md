@@ -16,16 +16,16 @@ The mode sets what Code may do without asking. Press <kbd>Shift</kbd> <kbd>Tab</
 
 | Mode | What it does |
 | --- | --- |
-| **plan** | Read-only. It looks at your code and proposes a plan. Edits and commands are refused. |
-| **manual** | Asks before every edit and command. |
-| **accept edits** | Edits apply. Commands ask. This is the default. |
-| **autopilot** | Runs everything in this folder without asking. |
+| **Plan** | Read-only. It looks at your code and proposes a plan. Edits and commands are refused. |
+| **Manual** | Asks before every edit and command. |
+| **Accept edits** | Edits apply. Commands ask. This is the default. |
+| **Autopilot** | Runs everything in this folder without asking. |
 
-Reading files, listing, searching and the task list never ask. Some commands always ask, even in autopilot: those that install packages, publish, delete in bulk, use the network or read secret files. Some commands never run in any mode, such as `sudo` and `shutdown`. Choose **plan** or **manual** for folders with sensitive files.
+Reading files, listing, searching and the task list never ask. Some commands always ask, even in autopilot: those that install packages, publish, delete in bulk, use the network or read secret files. Some commands never run in any mode, such as `sudo` and `shutdown`. Choose **Plan** or **Manual** for folders with sensitive files.
 
 ## What Code can do
 
-Code has eight tools: list a folder, find files by name, search file contents, read a file, edit a file, write a file, run a command, and keep a task list. When it works, each step shows as a line in the transcript, such as *read src/lib.rs* or *searched for*, with a **+added** and **−removed** count for edits.
+Code has eight tools: list a folder, find files by name, search file contents, read a file, edit a file, write a file, run a command, and keep a task list. When it works, each step shows as a line in the transcript, such as *Read src/lib.rs* or *Searched for*, with a **+added** and **−removed** count for edits.
 
 Commands run in your folder. A command is stopped after two minutes unless Code asks for longer, up to ten. If the same step fails three times in a row, Code stops and says so. After 50 steps in one turn, it stops and says *Stopped after 50 steps. Send a message to go on.*
 
@@ -35,7 +35,7 @@ When a step needs your approval, a card asks *Run this command?*, *Create this f
 
 ## Review changes
 
-Click **Changed files** in the title bar to open the panel on the right. It lists the files Code changed in this session, each with its diff. *Files Code changes show up here, ready to review.* shows until there is a change.
+Click **Changed files** in the title bar to open the panel on the right. It lists the files Code changed in this session, each with its diff. *Files that Code changes show up here, ready to review.* shows until there is a change.
 
 ## Checkpoints and rewind
 

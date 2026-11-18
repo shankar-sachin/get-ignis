@@ -38,7 +38,7 @@ The **Chat** and **Code** buttons in the title bar switch between those two scre
 | --- | --- |
 | Send message | <kbd>Enter</kbd> |
 | New line in the composer | <kbd>Shift</kbd> <kbd>Enter</kbd> |
-| Cycle the mode (plan, manual, accept edits, autopilot) | <kbd>Shift</kbd> <kbd>Tab</kbd> |
+| Cycle the mode (Plan, Manual, Accept edits, Autopilot) | <kbd>Shift</kbd> <kbd>Tab</kbd> |
 | Stop Code while it works | <kbd>Esc</kbd> |
 | Show or hide the terminal panel | <kbd>Ctrl</kbd> <kbd>`</kbd> |
 | Pick the highlighted file in the `@` menu | <kbd>Enter</kbd> |

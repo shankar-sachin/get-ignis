@@ -15,7 +15,7 @@ Bouncer Ignis runs open models on your own Mac, so chats and files stay local. I
 
 - [Chat](chat.md): talk with a model you have loaded.
 - [Code](code.md): work on a folder with a model, with changes you review before they apply.
-- [Rebound](rebound.md): make bots, give them a memory and run them on a schedule.
+- [Rebound](rebound.md): make bots, give them a memory, a folder or calendar to read and a voice, and run them on a schedule.
 - [Models](models.md): the library, the Marketplace and packages.
 - [Terminal commands](cli.md): `ignis`, the background service, and `bi`, the terminal chat.
 - [Settings](settings.md): appearance, the service and your hardware.

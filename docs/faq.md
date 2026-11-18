@@ -43,7 +43,7 @@ By hand, for now. See [Updates](updates.md).
 
 ## Does the service keep running when I close the window?
 
-Yes. The `ignis` service runs on its own, so Rebound routines run and other apps can use the [local API](local-api.md). Stop it with `ignis stop`, or the **Stop service** button in **Settings, engine**.
+Yes. The `ignis` service runs on its own, so Rebound routines run and other apps can use the [local API](local-api.md). Stop it with `ignis stop`, or the **Stop service** button in **Settings, Engine**.
 
 ## Can I use it with Claude Code, Ollama apps or the OpenAI libraries?
 
@@ -59,7 +59,7 @@ Ignis is lean on purpose. It does not have the IDE, Studio, Lab, Workflows, MLX,
 
 ## What is coming next?
 
-Intel Macs, Windows and Linux, an updater, Rebound connectors (a read-only folder and an `.ics` calendar) and voice out.
+Intel Macs, Windows and Linux, an updater, and a refreshed design in 0.4.0. Rebound connectors (a read-only folder and an `.ics` calendar) and voice out are in Ignis now. Voice input is not.
 
 ## Where do I report a problem?
 

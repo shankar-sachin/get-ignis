@@ -22,7 +22,7 @@ To make it stick, export the variables in your shell profile, or put them in Cla
 ## Things to know
 
 - **Pick a capable model.** Claude Code asks a lot of a model: long prompts and many tool calls. Models of 14 billion parameters and up cope better, and a small model may struggle.
-- **The first request loads the model**, so it takes longer. Keep the model loaded with `ignis start --model <model>`, and set **Unload when idle** to never in [Settings](settings.md#engine).
+- **The first request loads the model**, so it takes longer. Keep the model loaded with `ignis start --model <model>`, and set **Unload when idle** to Never in [Settings](settings.md#engine).
 - **Context.** Ignis loads a model with the largest context that fits your memory, up to 32,768 tokens. Claude Code's prompt is large, so a long session may reach the limit. `/compact` in Claude Code helps.
 - **Token counts.** `POST /v1/messages/count_tokens` returns an estimate, so `/context` in Claude Code works.
 - **Web search** in Claude Code is not available with local models.

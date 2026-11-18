@@ -6,7 +6,7 @@ Chat is where you talk with a model that runs on your Mac. Open it with <kbd>⌘
 
 ## Pick a model
 
-The model pill in the title bar shows the loaded model and its state. Click it to see **models on this machine**, choose one, or open the Marketplace with **Browse the Marketplace**. Choosing a model loads it. The status bar shows the model, its state (loading, ready or failed) and the `llama.cpp` version.
+The model pill in the title bar shows the loaded model and its state. Click it to see **Models on this machine**, choose one, or open the Marketplace with **Browse the Marketplace**. Choosing a model loads it. The status bar shows the model, its state (loading, ready or failed) and the `llama.cpp` version.
 
 Until a model is chosen, the composer says *Pick a model in the title bar to start…*. While it loads, it says *Loading* and the model name.
 

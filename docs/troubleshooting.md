@@ -39,7 +39,7 @@ If `ignis stop` says the service didn't stop in time, quit the app and try again
 ### A model won't load
 
 - Open the model in the Marketplace and check its fit. A file marked **Too large** may not load. Pick a smaller file.
-- Unload other models. **Settings, engine** sets how many may load at once.
+- Unload other models. **Settings, Engine** sets how many may load at once.
 - Read the error in `ignis logs`.
 
 ### A model is slow
@@ -94,7 +94,7 @@ The prompt is longer than the model's context. Send less, or start a new convers
 
 ### Ollama's port won't open
 
-**Settings, engine** shows why in the **ollama's port** line. If Ollama is running, quit it. If Bouncer or another Ignis window has the port, turn it off there. See [Local API](local-api.md#answer-on-ollamas-port).
+**Settings, Engine** shows why in the **Ollama's port** line. If Ollama is running, quit it. If Bouncer or another Ignis window has the port, turn it off there. See [Local API](local-api.md#answer-on-ollamas-port).
 
 ## Code
 
@@ -108,7 +108,7 @@ It stops after 50 steps in a turn, if the same step fails three times in a row, 
 
 ### Code won't run a command
 
-In **plan** mode, commands are refused. In other modes, risky commands such as installs and network use ask first, and some commands, like `sudo`, never run. See [Code](code.md#modes).
+In **Plan** mode, commands are refused. In other modes, risky commands such as installs and network use ask first, and some commands, like `sudo`, never run. See [Code](code.md#modes).
 
 ## Rebound
 
