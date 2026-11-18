@@ -21,12 +21,12 @@ Your chats, bots, settings and models are kept. They are in `~/Library/Applicati
 
 ## Find out which version you have
 
-- In the app: **Settings, about** shows the version.
+- In the app: **Settings, About** shows the version.
 - In Terminal: `ignis --version` and `bi --version`.
 
 ## Find out when there is a new one
 
-Watch the [releases page](https://github.com/shankar-sachin/get-ignis/releases), or read the [changelog](../CHANGELOG.md). Releases are tagged `ignis-v<version>`, for example `ignis-v0.2.0`.
+Watch the [releases page](https://github.com/shankar-sachin/get-ignis/releases), or read the [changelog](../CHANGELOG.md). Releases are tagged `ignis-v<version>`, for example `ignis-v0.3.0`.
 
 ## Packages
 

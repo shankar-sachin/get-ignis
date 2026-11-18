@@ -27,7 +27,7 @@ Ignis checks each model against your Mac before you download it, and labels ever
 
 Trust the label for your Mac over this table. Open a model in the Marketplace to see the estimate for each file.
 
-Start with a small model. A 4 to 8 billion parameter model runs on most Macs. **Settings, hardware** shows your processor, memory and graphics.
+Start with a small model. A 4 to 8 billion parameter model runs on most Macs. **Settings, Hardware** shows your processor, memory and graphics.
 
 ## Engine
 

@@ -13,9 +13,9 @@ The `ignis` background service serves an API on your Mac, so other apps and scri
 | Who can connect | This computer only |
 | API key | Not needed |
 
-The service starts the API when it starts, unless a `local-server.json` file turns it off. **Settings, engine** shows the address next to **local API**, and `ignis status` prints it. Ignis uses port 3333 so it never clashes with Bouncer's 3133.
+The service starts the API when it starts, unless a `local-server.json` file turns it off. **Settings, Engine** shows the address next to **Local API**, and `ignis status` prints it. Ignis uses port 3333 so it never clashes with Bouncer's 3133.
 
-Any request needs a model. Name it in the `model` field, by its library id, repo or name, as described in [Models](models.md#names). `GET /v1/models` lists them. If **load when needed** is on in [Settings](settings.md#engine), which it is by default, a request for a model that is not loaded loads it first. The first reply is slower while it loads.
+Any request needs a model. Name it in the `model` field, by its library id, repo or name, as described in [Models](models.md#names). `GET /v1/models` lists them. If **Load when needed** is on in [Settings](settings.md#engine), which it is by default, a request for a model that is not loaded loads it first. The first reply is slower while it loads.
 
 Check that it is up:
 
@@ -145,7 +145,7 @@ An empty `/api/chat` or `/api/generate` request is how clients load a model. Ign
 
 ### Answer on Ollama's port
 
-Apps made for Ollama look on port 11434. To have Ignis answer there too, turn on **Answer on Ollama's port** in **Settings, engine**. It is off until you turn it on, and it is for this computer only. **ollama's port** in the same card shows whether it is listening.
+Apps made for Ollama look on port 11434. To have Ignis answer there too, turn on **Answer on Ollama's port** in **Settings, Engine**. It is off until you turn it on, and it is for this computer only. **Ollama's port** in the same card shows whether it is listening.
 
 If something else is using 11434, the card says what. If Ollama itself is running, quit it, then turn the switch on again.
 

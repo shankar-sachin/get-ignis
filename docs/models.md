@@ -22,11 +22,11 @@ In the terminal, `ignis list` shows the library and `ignis rm` removes a model. 
 
 Open it with <kbd>⌘</kbd> <kbd>6</kbd>. It has three tabs: **Discover**, **Library** and **Downloads**.
 
-**Discover** searches Hugging Face for GGUF models. Type in the search box, for example `qwen` or `llama`. With no search, it shows **recommended for this machine** and shelves by maker. Filters:
+**Discover** searches Hugging Face for GGUF models. Type in the search box, for example `qwen` or `llama`. With no search, it shows **Recommended for this machine** and shelves by maker. Filters:
 
-- **fits this machine** hides files that are too large for your Mac.
-- **hide fine-tunes & merges** shows the original models.
-- Publishers: **verified publishers** (the labs themselves), **trusted publishers** (well-known re-packagers) or **all publishers**.
+- **Fits this machine** hides files that are too large for your Mac.
+- **Hide fine-tunes & merges** shows the original models.
+- Publishers: **Verified publishers** (the labs themselves), **Trusted publishers** (well-known re-packagers) or **All publishers**.
 
 Click a model to open it. The page has **Overview**, **Files** and **Model card**. The overview shows the trained context, the base model and an estimate for this Mac.
 
@@ -58,7 +58,7 @@ Wherever a command or the API takes a model, you can use its full library id (`o
 
 ## Loading and memory
 
-A model loads when you choose it, and, if **load when needed** is on (it is by default), when a request from the local API names it. **Settings, engine** sets how many models stay loaded at once (1, 2, 3 or auto) and when an idle one unloads (15 minutes, 1 hour, 4 hours or never). When there is no room, Ignis unloads the model used least recently. See [Settings](settings.md#engine).
+A model loads when you choose it, and, if **Load when needed** is on (it is by default), when a request from the local API names it. **Settings, Engine** sets how many models stay loaded at once (1, 2, 3 or auto) and when an idle one unloads (15 minutes, 1 hour, 4 hours or never). When there is no room, Ignis unloads the model used least recently. See [Settings](settings.md#engine).
 
 ## Packages
 

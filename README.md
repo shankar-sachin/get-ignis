@@ -36,7 +36,7 @@ Bouncer Ignis is a local-first AI app for macOS on Apple silicon. It is the lean
 curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh
 ```
 
-The installer fetches the [latest release](https://github.com/shankar-sachin/get-ignis/releases/latest) and checks it against its `SHA256SUMS`. Add `--dry-run` (`| sh -s -- --dry-run`) to see what would happen first, `--version v0.2.0` to pick a version, or `--cli-only` to install only the `ignis` and `bi` commands. It runs on macOS only for now.
+The installer fetches the [latest release](https://github.com/shankar-sachin/get-ignis/releases/latest) and checks it against its `SHA256SUMS`. Add `--dry-run` (`| sh -s -- --dry-run`) to see what would happen first, `--version v0.3.0` to pick a version, or `--cli-only` to install only the `ignis` and `bi` commands. It runs on macOS only for now.
 
 Prefer to download it yourself? Every file is on the [releases page](https://github.com/shankar-sachin/get-ignis/releases):
 
@@ -55,7 +55,7 @@ Builds are not signed or notarized yet. If macOS blocks the app, right-click it 
 | --- | --- |
 | **[Chat](docs/chat.md)** | Talk with a model you have loaded. Chats are saved, and you can rename or delete them. |
 | **[Code](docs/code.md)** | Point a model at a folder. It reads, edits and runs commands, and you review each change as a diff. Four modes, checkpoints to rewind, a terminal panel, `@` file mentions and compaction. |
-| **[Rebound](docs/rebound.md)** | Your own bots, each with a name, a personality, a face and a memory. Routines run a bot on a schedule. |
+| **[Rebound](docs/rebound.md)** | Your own bots, each with a name, a personality, a face and a memory. Routines run a bot on a schedule. Connectors let a bot read a folder or a calendar, and it can read its replies aloud. |
 | **[Marketplace](docs/models.md)** | Search GGUF models on Hugging Face, check how each file fits your Mac, and download them. Your [library](docs/models.md#the-library) is shared with Bouncer. |
 | **[Settings](docs/settings.md)** | Theme, accent, the service, how many models load at once, and your hardware. |
 | **[`ignis`](docs/cli.md)** | The background service and model manager. It runs llama.cpp and serves the [local API](docs/local-api.md). |
@@ -130,7 +130,7 @@ The full list is in the [privacy policy](PRIVACY.md) and [docs/privacy.md](docs/
 
 ## Reporting bugs
 
-[Open an issue](https://github.com/shankar-sachin/get-ignis/issues/new/choose) and pick a template. Include your Ignis version (**Settings, about**, or `ignis --version`), your Mac, and the service log lines around the error (`ignis logs`), with any private text removed. For security problems, see [SECURITY.md](SECURITY.md) and don't open a public issue.
+[Open an issue](https://github.com/shankar-sachin/get-ignis/issues/new/choose) and pick a template. Include your Ignis version (**Settings, About**, or `ignis --version`), your Mac, and the service log lines around the error (`ignis logs`), with any private text removed. For security problems, see [SECURITY.md](SECURITY.md) and don't open a public issue.
 
 ## About this repository
 

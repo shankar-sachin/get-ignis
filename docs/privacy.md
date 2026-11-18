@@ -9,6 +9,7 @@ These are stored locally and are never uploaded by Ignis:
 - **Models**: the model files you download or import, and your library.
 - **Chats**: your conversations in Chat, and the bots, memories, routines and chats in Rebound.
 - **Files**: the folders and files you open in Code.
+- **Connectors and voice**: the one folder and the one `.ics` file you give a bot stay where they are, and a bot reads them only on this Mac. Read aloud uses the voices macOS already has.
 - **Code sessions and checkpoints**: Code's sessions, and the snapshots it takes before each turn so you can rewind. They are stored in Ignis's data folder, not in your project.
 - **Settings**.
 
@@ -35,12 +36,12 @@ The local API listens on this computer only. A web page in your browser can reac
 
 Code works only inside the folder you choose for a project, and it runs commands there when the mode allows it:
 
-- **plan** reads files and proposes changes. It makes no edits and runs no commands.
-- **manual** asks before every edit and command.
-- **accept edits** applies edits, but asks before it runs commands.
-- **autopilot** runs everything in the project folder without asking.
+- **Plan** reads files and proposes changes. It makes no edits and runs no commands.
+- **Manual** asks before every edit and command.
+- **Accept edits** applies edits, but asks before it runs commands.
+- **Autopilot** runs everything in the project folder without asking.
 
-Commands that use the network, install packages, publish, delete in bulk or read secret files always ask first, even in autopilot. A command you approve can still contact the internet. Choose **manual** or **plan** for folders with sensitive files. The terminal panel is a normal shell, and what you type there is not checked.
+Commands that use the network, install packages, publish, delete in bulk or read secret files always ask first, even in autopilot. A command you approve can still contact the internet. Choose **Manual** or **Plan** for folders with sensitive files. The terminal panel is a normal shell, and what you type there is not checked.
 
 ## Your Hugging Face token
 

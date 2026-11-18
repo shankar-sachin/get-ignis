@@ -1,6 +1,6 @@
 # Rebound bot ideas
 
-Three example bots and one routine. Each bot shows the fields the bot builder asks for: name, tagline, personality, traits, greeting, creativity and a face (a color and eyes). Pick a **start from** chip as a base if you like, then edit the personality to your taste. See [Rebound](../docs/rebound.md).
+Three example bots and one routine. Each bot shows the fields the bot builder asks for: name, tagline, personality, traits, greeting, creativity and a face (a color and eyes). Pick a **Start from** chip as a base if you like, then edit the personality to your taste. See [Rebound](../docs/rebound.md).
 
 ## Ada
 
@@ -34,11 +34,11 @@ Three example bots and one routine. Each bot shows the fields the bot builder as
 
 ## A routine: morning brief
 
-Open a bot's room, choose **routines** and add a routine.
+Open a bot's room, choose **Routines** and add a routine.
 
 - **Name:** Morning brief
 - **What to ask:** Give me a word of the day with an example sentence, and one small thing to try today.
-- **When:** daily, at 08:00, on M T W T F
+- **When:** Daily, at 08:00, on M T W T F
 - **Bot:** Pip
 
 The service runs it at the set time, even when the window is closed, and posts the reply in the routine's own chat with a notification. Click **Run now** to try it.
