@@ -1,0 +1,41 @@
+name: Feature request
+description: Suggest a change or a new capability.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ignis is the lean edition of Bouncer, so some things are left out on purpose, such as the IDE, Studio, Lab, Workflows and MLX. Check the [FAQ](https://bouncer-ai.pages.dev/ignis/docs) before you ask for one of those.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of Ignis
+      options:
+        - Chat
+        - Code
+        - Rebound
+        - Marketplace
+        - Settings
+        - The ignis service or local API
+        - bi (terminal chat)
+        - Install and updates
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe what you are trying to do and where it gets in the way.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: What would you like to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you have tried

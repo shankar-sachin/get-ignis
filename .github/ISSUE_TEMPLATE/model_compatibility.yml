@@ -1,0 +1,57 @@
+name: Model compatibility
+description: A model will not load, or it loads and misbehaves.
+labels: ["model"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for models that fail or behave badly. For general model questions, see the [docs](https://bouncer-ai.pages.dev/ignis/docs).
+  - type: input
+    id: repo
+    attributes:
+      label: Hugging Face repository
+      description: The repository id as it appears in the URL, for example owner/model-name-GGUF.
+      placeholder: "owner/model-name-GGUF"
+    validations:
+      required: true
+  - type: input
+    id: file
+    attributes:
+      label: File name, quantization and size
+      description: The GGUF file you downloaded, and its size as shown in the Marketplace.
+      placeholder: "model-Q4_K_M.gguf, 5.0 GB"
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What happens
+      options:
+        - It will not load
+        - It loads but crashes or stops
+        - The output is garbled or wrong
+        - It is very slow
+        - The fit label in the Marketplace is wrong
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Error text
+      description: The message shown when the load failed. Run `ignis logs -n 200` and paste the lines around the error.
+      render: text
+  - type: input
+    id: hardware
+    attributes:
+      label: Chip, memory and macOS version
+      placeholder: "Apple M2 Max, 32 GB, macOS 15"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Ignis version
+      description: Shown in Settings, about, or by `ignis --version`.
+    validations:
+      required: true

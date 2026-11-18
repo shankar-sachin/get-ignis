@@ -1,0 +1,12 @@
+{
+  "name": "ignis",
+  "version": "0.2.0",
+  "description": "Check the Bouncer Ignis service, list local models, ask a local model for a private second opinion, and point Claude Code at Ignis.",
+  "author": {
+    "name": "Sachin Shankar"
+  },
+  "homepage": "https://bouncer-ai.pages.dev/ignis",
+  "repository": "https://github.com/shankar-sachin/get-ignis",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "keywords": ["local-models", "ignis", "llama.cpp", "privacy"]
+}
