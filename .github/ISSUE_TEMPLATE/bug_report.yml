@@ -1,0 +1,81 @@
+name: Bug report
+description: Something in Bouncer Ignis does not work the way the docs describe.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check [Troubleshooting](https://bouncer-ai.pages.dev/ignis/docs) first. Remove private text from logs before you paste them.
+  - type: input
+    id: version
+    attributes:
+      label: Ignis version
+      description: Shown in Settings, about. Or run `ignis --version`.
+      placeholder: "0.2.0"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: macOS version and Mac
+      placeholder: "macOS 15 on a MacBook Pro with M3 Pro"
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: Chip and memory
+      description: Settings, hardware lists them.
+      placeholder: "Apple M3 Pro, 36 GB unified memory"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of Ignis
+      options:
+        - Chat
+        - Code
+        - Rebound
+        - Marketplace
+        - Settings
+        - The ignis service or local API
+        - bi (terminal chat)
+        - Install
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model name and quantization
+      description: Leave empty if the problem does not involve a model.
+      placeholder: "Qwen 3 8B, Q4_K_M"
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Service log
+      description: Run `ignis logs -n 200` and paste the lines around the error. Remove any private text first.
+      render: text

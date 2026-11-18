@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy policy · Ignis</title>
+  <meta name="description" content="What Bouncer Ignis keeps on your computer, and the few times it goes online." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
+  <link rel="canonical" href="https://bouncer-ai.pages.dev/ignis/privacy.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Bouncer Ignis" />
+  <meta property="og:title" content="Privacy policy · Ignis" />
+  <meta property="og:description" content="What Bouncer Ignis keeps on your computer, and the few times it goes online." />
+  <meta property="og:url" content="https://bouncer-ai.pages.dev/ignis/privacy.html" />
+  <meta property="og:image" content="https://bouncer-ai.pages.dev/ignis/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Privacy policy · Ignis" />
+  <meta name="twitter:description" content="What Bouncer Ignis keeps on your computer, and the few times it goes online." />
+  <meta name="twitter:image" content="https://bouncer-ai.pages.dev/ignis/assets/og.png" />
+
+  <!-- Theme before first paint: a stored choice wins, otherwise the system preference decides in CSS. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('bouncer-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400..500&display=swap" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Bouncer Ignis home">
+        <img src="assets/brand/ignis-128.png" width="28" height="28" alt="" />
+        <span>Bouncer Ignis</span>
+      </a>
+      <nav class="site-nav" aria-label="main">
+        <a href="index.html#features">features</a>
+        <a href="index.html#compare">vs bouncer</a>
+        <a href="index.html#claude-code">claude code</a>
+        <a href="index.html#download">download</a>
+        <a href="index.html#faq">faq</a>
+        <a href="docs.html#/install">docs</a>
+      </nav>
+      <div class="header-tools">
+        <a class="back" href="https://bouncer-ai.pages.dev">Bouncer</a>
+        <button class="btn btn-quiet btn-icon" type="button" id="theme-toggle" aria-label="switch to light theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
+        </button>
+        <a class="gh" href="https://github.com/shankar-sachin/get-ignis" aria-label="Bouncer Ignis on GitHub" title="GitHub"><svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+      </div>
+    </div>
+  </header>
+
+
+  <main id="main" class="wrap legal">
+    <span class="eyebrow">legal</span>
+    <h1>Privacy policy</h1>
+    <p class="legal-meta">Effective 2026-11-17 · Publisher: Sachin Shankar</p>
+
+    <p><strong>Short version:</strong> Ignis runs on your computer and keeps your data there. It has no accounts, no analytics, no telemetry and no crash reporting. The publisher receives nothing about you or how you use it.</p>
+
+    <h2>What stays on your machine</h2>
+    <p>Your models, your chats, your Rebound bots, their memory and routines, the folders and files you open in Code, its checkpoints, and your settings. A chat with a local model is answered by the model on your computer. Your messages are not sent to a server to get a reply.</p>
+
+    <h2>When Ignis connects to the internet</h2>
+    <p>Ignis goes online only for the tasks below, and only when you use the feature that needs them.</p>
+    <ul>
+      <li><strong>Marketplace and model downloads (Hugging Face).</strong> Ignis requests model listings, files and model cards, and the model file you choose to download.</li>
+      <li><strong>Packages.</strong> <code>ignis search</code> and <code>ignis install</code> read the package index on the Bouncer site (bouncer-ai.pages.dev), or the address you give them.</li>
+      <li><strong>Installing (GitHub).</strong> The install script asks the GitHub API for the newest release of <a href="https://github.com/shankar-sachin/get-ignis">shankar-sachin/get-ignis</a> and downloads it. There is no updater yet, so the app itself does not check for updates.</li>
+    </ul>
+    <p>These services receive each request the way a browser would send it, so their own privacy policies apply to what they log: <a href="https://huggingface.co/privacy">Hugging Face</a> and <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a>. Ignis adds no identifiers of its own.</p>
+    <p>This website is hosted on <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Pages</a>, which is governed by its own privacy policy. The pages of this site load no analytics or tracking scripts. The docs page loads two scripts (marked and DOMPurify) from jsDelivr, and the pages load the Geist fonts from Google Fonts.</p>
+
+    <h2>The local API</h2>
+    <p>The local API runs while the Ignis service runs. It listens on 127.0.0.1 only, so only programs on your computer can reach it. Requests to it are answered by the model on your computer.</p>
+
+    <h2>Deleting your data</h2>
+    <p>Uninstalling Ignis and deleting its data folder removes everything it stored. The folder is <code>~/Library/Application Support/Bouncer Ignis</code>. The model library is shared with Bouncer, so deleting a model removes it for both apps.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the new version is published in the <a href="https://github.com/shankar-sachin/get-ignis">get-ignis repository</a> and noted in its <a href="https://github.com/shankar-sachin/get-ignis/blob/main/CHANGELOG.md">changelog</a>. The effective date at the top shows the latest version.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy go to <a href="https://github.com/shankar-sachin/get-ignis/issues">GitHub issues</a>. The longer version is in the <a href="docs.html#/privacy">docs</a>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© Sachin Shankar. All rights reserved.</p>
+      <nav aria-label="footer">
+        <a href="https://bouncer-ai.pages.dev">Bouncer</a>
+        <a href="https://github.com/shankar-sachin/get-ignis/releases">Releases</a>
+        <a href="https://github.com/shankar-sachin/get-ignis/blob/main/scripts/install.sh">Install script</a>
+        <a href="https://github.com/shankar-sachin/get-ignis/tree/main/plugins">Claude Code plugin</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

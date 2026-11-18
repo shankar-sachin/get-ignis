@@ -1,0 +1,21 @@
+{
+  "name": "get-ignis",
+  "description": "Claude Code plugins for Bouncer Ignis, the lean local AI app for macOS.",
+  "owner": {
+    "name": "Sachin Shankar"
+  },
+  "plugins": [
+    {
+      "name": "ignis",
+      "source": "./plugins/ignis",
+      "description": "Check the Ignis service, list local models, ask a local model for a private second opinion, and point Claude Code at Ignis.",
+      "version": "0.2.0",
+      "author": {
+        "name": "Sachin Shankar"
+      },
+      "homepage": "https://bouncer-ai.pages.dev/ignis",
+      "category": "development",
+      "keywords": ["local-models", "ignis", "llama.cpp", "privacy"]
+    }
+  ]
+}
