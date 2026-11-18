@@ -84,7 +84,7 @@ Ignis is not a replacement for Bouncer. It does less, on purpose.
 | Voice input | No | Yes |
 | Plugins | No | Yes |
 | Accounts and sync | No | Optional |
-| Updates | By hand for now | Built in |
+| Updates | Built in (Settings, About or `ignis self-update`) | Built in |
 
 You can install both. See [Ignis with Bouncer](docs/with-bouncer.md).
 

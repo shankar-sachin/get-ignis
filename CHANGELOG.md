@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.4.0
+
+2026-11-18. A refreshed look, and Ignis can update itself.
+
+### New
+
+- **Updates in Settings, About**: Ignis checks for a new version when you open **About**. **Download and install** downloads the app, checks it against the release's `SHA256SUMS` and replaces it, with `ignis` and `bi` inside. **Restart now** stops the service, quits and opens the new version. See [Updates](docs/updates.md).
+- **`ignis self-update`**: the same from Terminal. `--check` shows your version and the newest one, `-y` installs without asking, `--version` picks a release, `--pre` allows prereleases. See [Terminal commands](docs/cli.md#updating-ignis).
+- Ignis 0.3.0 and older have no updater: update to 0.4.0 by hand once.
+
+### Changed
+
+- **Refreshed design**: panels, menus and dialogs have depth; sizes, quants and other details use a monospace font; greetings use a serif face, as in Bouncer; buttons, fields and cards have pressed and focus states. Animations follow macOS's Reduce motion setting. The accents and themes are unchanged.
+- Rebound's **Speed** (Slow, Normal, Fast, Faster), creativity and personality choices use sentence case.
+- Privacy: Ignis contacts GitHub to check for updates, only when you open **Settings, About** or run `ignis self-update`. See [Privacy](docs/privacy.md).
+
+Coming next: Intel Macs, Windows and Linux.
+
 ## v0.3.0
 
 2026-11-17. Rebound can read a folder and a calendar and speak its replies, and the app's labels now start with a capital.

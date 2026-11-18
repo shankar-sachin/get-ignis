@@ -22,11 +22,12 @@ A chat with a local model is processed by the model on your computer. Ignis does
 | Searching the Marketplace and opening model pages | Requests to Hugging Face for model listings, files and model cards. | When you search or open a model. `ignis search --hf` does the same. |
 | Downloading a model | A request for the model file from Hugging Face. | Only when you click **Download**, run `ignis pull`, or send an Ollama `pull` request to the local API. |
 | Gated models | Your Hugging Face token, only if you set `HF_TOKEN` before starting Ignis. Sent only to Hugging Face. | Only when you download a gated model. |
+| Updates | A request to GitHub's API for the list of Ignis releases; when you install, the release's zip and `SHA256SUMS` from GitHub. | When you open **Settings, About** (once per launch) or click **Check again**, and when you run `ignis self-update`. |
 | Packages | Requests to bouncer-ai.pages.dev for the package index and package files, then Hugging Face for the package's model. | When you run `ignis search`, `install` or `update`. |
 
-Hugging Face and bouncer-ai.pages.dev receive these requests the same way they receive any request from a browser or downloader, so their own privacy policies apply to what they log.
+Hugging Face, GitHub and bouncer-ai.pages.dev receive these requests the same way they receive any request from a browser or downloader, so their own privacy policies apply to what they log.
 
-Ignis has no update check, so it does not contact GitHub on its own. It has no web search and no cloud model providers.
+Ignis checks GitHub for updates only when you open **Settings, About** or run `ignis self-update`, never in the background. It has no web search and no cloud model providers.
 
 ## The local API
 

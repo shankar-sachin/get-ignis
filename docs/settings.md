@@ -40,6 +40,8 @@ Shows what Ignis sees: your **Processor** and cores, **Memory** in use and free,
 
 Shows the version, and where Ignis keeps its data (**Ignis data**) and your **Model library**.
 
+**Updates** checks for a newer version the first time you open About. When one is out, **Download and install** downloads and checks it, then **Restart now** opens the new version. See [Updates](updates.md).
+
 ## Related
 
 - [Local API](local-api.md)
