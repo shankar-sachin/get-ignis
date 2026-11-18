@@ -1,6 +1,29 @@
 # Updates
 
-Ignis has no updater yet. It does not check for new versions, and it does not download them. You update by hand. An updater is planned.
+Ignis can update itself, from **Settings, About** or with `ignis self-update`. Updates come from the [releases page](https://github.com/shankar-sachin/get-ignis/releases), and every download is checked against the release's `SHA256SUMS` before anything is installed.
+
+Self-update works on Macs with Apple silicon, which is every build so far. It arrived in 0.4.0, so to get from 0.3.0 or older to 0.4.0, [update by hand](#update-by-hand) once.
+
+## In the app
+
+Open **Settings** (<kbd>⌘</kbd> <kbd>,</kbd>) and pick **About**. The first time you open it, Ignis checks for a newer version.
+
+- **Up to date**: you have the newest version. **Check again** checks once more.
+- **Update available**: **Release notes** opens the release on GitHub. **Download and install** downloads the app, checks it, and replaces `/Applications/Bouncer Ignis.app` with the new one. `ignis` and `bi` are inside the app, so they update too.
+- **Ready to restart**: **Restart now** stops the background service, quits Ignis and opens the new version. A reply in progress stops.
+
+If the update fails, nothing was installed, and **Try again** starts over. If Ignis can't write to the app's folder, it says so; run the install command instead.
+
+## In Terminal
+
+```sh
+ignis self-update --check     # show your version and the newest one
+ignis self-update             # download, check and install the newest, after asking
+ignis self-update -y          # the same, without asking
+ignis self-update --version 0.4.0   # install a specific release
+```
+
+When `ignis` runs from inside the app, `self-update` updates the whole app. When you installed only the commands (`--cli-only`), it updates `ignis` and `bi` where they are. Run `ignis stop` afterwards, so the next start uses the new service.
 
 ## Update by hand
 
@@ -12,7 +35,7 @@ curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh
 
 Or download the new files from [Releases](https://github.com/shankar-sachin/get-ignis/releases) and install them as described in [Install](install.md).
 
-Before you update:
+Before you update by hand:
 
 1. Quit Bouncer Ignis.
 2. Stop the background service: `ignis stop`. The new version starts it again when you open the app.
@@ -24,9 +47,9 @@ Your chats, bots, settings and models are kept. They are in `~/Library/Applicati
 - In the app: **Settings, About** shows the version.
 - In Terminal: `ignis --version` and `bi --version`.
 
-## Find out when there is a new one
+## What updating sends
 
-Watch the [releases page](https://github.com/shankar-sachin/get-ignis/releases), or read the [changelog](../CHANGELOG.md). Releases are tagged `ignis-v<version>`, for example `ignis-v0.3.0`.
+Checking asks GitHub's API for the list of Ignis releases. Installing downloads the release's zip and `SHA256SUMS` from GitHub. Nothing about you or your chats is sent. See [Privacy](privacy.md).
 
 ## Packages
 
@@ -35,4 +58,5 @@ Packages you installed with `ignis install` update separately. `ignis update --c
 ## Related
 
 - [Install](install.md)
+- [Settings](settings.md#about)
 - [Troubleshooting](troubleshooting.md)

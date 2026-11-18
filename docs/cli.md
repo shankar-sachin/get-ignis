@@ -70,6 +70,12 @@ A package is a model with the settings it runs best with. See [Models](models.md
 
 Tables and JSON go to standard output. Progress and messages go to standard error. Exit codes: `0` done, `1` failed, `2` wrong usage, `130` stopped with Ctrl+C.
 
+### Updating Ignis
+
+| Command | What it does |
+| --- | --- |
+| `self-update [--check] [--version <version>] [--pre] [-y]` | Checks get-ignis's releases for a newer Ignis, downloads it, checks it against `SHA256SUMS`, and installs it over this copy: the whole app when `ignis` runs from inside it, or `ignis` and `bi` where they are. `--check` only shows your version and the newest one. `--version` installs a specific release. `--pre` allows prereleases. `-y` or `--yes` installs without asking. See [Updates](updates.md). |
+
 ## bi
 
 `bi` chats with a model from the terminal.
@@ -124,6 +130,7 @@ Start and end a message with `"""` to write more than one line, or press <kbd>Al
 | `BOUNCER_USER_DATA_DIR` | Use this folder instead of `~/Library/Application Support/Bouncer` for the model library. |
 | `HF_TOKEN` | A Hugging Face token for gated models, sent only to Hugging Face. |
 | `BOUNCER_BCR_INDEX` | Read the package index from another address. |
+| `IGNIS_UPDATE_API` | Read releases from another address instead of `https://api.github.com`, for testing `self-update`. |
 | `IGNIS_HIDDEN` | Keep the service's desktop notifications off, for test runs. |
 
 The service reads these when it starts. If you set one, stop the service with `ignis stop` first, with the same variables set.

@@ -20,7 +20,7 @@ macOS on Apple silicon. Intel Macs, Windows and Linux are planned. See [System r
 
 ## Does anything leave my machine?
 
-Your prompts, chats, files and the model's replies stay on your computer. Ignis contacts the internet only to search and download from Hugging Face, and to read Bouncer's package index when you use packages. There is no analytics or telemetry, no update check and no account. See [Privacy](privacy.md).
+Your prompts, chats, files and the model's replies stay on your computer. Ignis contacts the internet only to search and download from Hugging Face, and to read Bouncer's package index when you use packages. It checks GitHub for a new version only when you open **Settings, About** or run `ignis self-update`. There is no analytics or telemetry and no account. See [Privacy](privacy.md).
 
 ## Does it work offline?
 
@@ -39,7 +39,7 @@ Any GGUF model that llama.cpp can run. The Marketplace lists GGUF builds from Hu
 
 ## How do I update?
 
-By hand, for now. See [Updates](updates.md).
+From **Settings, About**, or with `ignis self-update` in Terminal. See [Updates](updates.md).
 
 ## Does the service keep running when I close the window?
 
@@ -59,7 +59,7 @@ Ignis is lean on purpose. It does not have the IDE, Studio, Lab, Workflows, MLX,
 
 ## What is coming next?
 
-Intel Macs, Windows and Linux, an updater, and a refreshed design in 0.4.0. Rebound connectors (a read-only folder and an `.ics` calendar) and voice out are in Ignis now. Voice input is not.
+Intel Macs, Windows and Linux. The updater and the refreshed design are in 0.4.0. Rebound connectors (a read-only folder and an `.ics` calendar) and voice out are in Ignis now. Voice input is not.
 
 ## Where do I report a problem?
 

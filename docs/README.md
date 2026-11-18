@@ -8,7 +8,7 @@ Bouncer Ignis runs open models on your own Mac, so chats and files stay local. I
 
 - [Getting started](getting-started.md): install, your first model and your first chat.
 - [Install](install.md): the install command, manual downloads, checksums and uninstalling.
-- [Updates](updates.md): how to update by hand. There is no updater yet.
+- [Updates](updates.md): update from Settings, About or with `ignis self-update`.
 - [System requirements](system-requirements.md): supported systems and memory.
 
 ## Use Ignis
