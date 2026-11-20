@@ -16,7 +16,7 @@ No. Ignis is closed source. The public repository [get-ignis](https://github.com
 
 ## Which systems does it run on?
 
-macOS on Apple silicon. Intel Macs, Windows and Linux are planned. See [System requirements](system-requirements.md).
+macOS (Apple silicon and Intel), Windows 10 and 11 (x64) and Linux (x64). On Windows and Linux, models run on the CPU for now. See [System requirements](system-requirements.md).
 
 ## Does anything leave my machine?
 
@@ -24,26 +24,28 @@ Your prompts, chats, files and the model's replies stay on your computer. Ignis 
 
 ## Does it work offline?
 
-Yes, once a model is on your Mac. Searching and downloading models need a connection.
+Yes, once a model is on your computer. Searching and downloading models need a connection.
 
 ## Which models can I run?
 
-Any GGUF model that llama.cpp can run. The Marketplace lists GGUF builds from Hugging Face and labels each file **Runs well**, **Tight fit** or **Too large** for your Mac. MLX models are not supported. See [Models](models.md).
+Any GGUF model that llama.cpp can run. The Marketplace lists GGUF builds from Hugging Face and labels each file **Runs well**, **Tight fit** or **Too large** for your computer. MLX models are not supported. See [Models](models.md).
 
 ## Where is my data stored?
 
 | What | Where |
 | --- | --- |
-| Ignis's data: settings, chats, bots, Code sessions, logs | `~/Library/Application Support/Bouncer Ignis` |
-| The model library, shared with Bouncer | `~/Library/Application Support/Bouncer/models` |
+| What | macOS | Windows | Linux |
+| --- | --- | --- | --- |
+| Ignis's data: settings, chats, bots, Code sessions, logs | `~/Library/Application Support/Bouncer Ignis` | `%APPDATA%\Bouncer Ignis` | `~/.config/Bouncer Ignis` |
+| The model library, shared with Bouncer | `~/Library/Application Support/Bouncer/models` | `%APPDATA%\Bouncer\models` | `~/.config/Bouncer/models` |
 
 ## How do I update?
 
-From **Settings, About**, or with `ignis self-update` in Terminal. See [Updates](updates.md).
+On macOS, from **Settings, About**, or with `ignis self-update` in Terminal. On Windows and Linux, **About** says when a new version is out, and you run the install command again. See [Updates](updates.md).
 
 ## Does the service keep running when I close the window?
 
-Yes. The `ignis` service runs on its own, so Rebound routines run and other apps can use the [local API](local-api.md). Stop it with `ignis stop`, or the **Stop service** button in **Settings, Engine**.
+Yes. The `ignis` service runs on its own, so Rebound routines run and other apps can use the [local API](local-api.md). Stop it with `ignis stop`, or the **Stop service** button in **Settings, Engine**. To start it when you log in, turn on **Start at login** in **Settings, Engine**, or run `ignis enable`.
 
 ## Can I use it with Claude Code, Ollama apps or the OpenAI libraries?
 
@@ -59,8 +61,8 @@ Ignis is lean on purpose. It does not have the IDE, Studio, Lab, Workflows, MLX,
 
 ## What is coming next?
 
-Intel Macs, Windows and Linux. The updater and the refreshed design are in 0.4.0. Rebound connectors (a read-only folder and an `.ics` calendar) and voice out are in Ignis now. Voice input is not.
+GPU support on Windows and Linux, and routine notifications on Windows. The updater and the refreshed design are in 0.4.0. Rebound connectors (a read-only folder and an `.ics` calendar) and voice out are in Ignis now. Voice input is not.
 
 ## Where do I report a problem?
 
-Start with [Troubleshooting](troubleshooting.md). Then [open an issue](https://github.com/shankar-sachin/get-ignis/issues/new/choose) with your Ignis version, your Mac and the output of `ignis logs`, with any private text removed.
+Start with [Troubleshooting](troubleshooting.md). Then [open an issue](https://github.com/shankar-sachin/get-ignis/issues/new/choose) with your Ignis version, your system and the output of `ignis logs`, with any private text removed.

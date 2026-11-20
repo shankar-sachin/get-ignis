@@ -4,7 +4,7 @@ Ignis comes with two commands. `ignis` manages the background service and your m
 
 ## Set up the commands
 
-The commands are in the `ignis-cli-<version>-macos-arm64.tar.gz` on the [releases page](https://github.com/shankar-sachin/get-ignis/releases), or from the [install script](install.md) with `--cli-only`. Keep `ignis` and `bi` in the same folder, and put that folder on your `PATH`. `bi` finds `ignis` next to itself, and starts it when it needs it.
+The commands are in the `ignis-cli-<version>-<system>` archive on the [releases page](https://github.com/shankar-sachin/get-ignis/releases), or from the [install script](install.md) with `--cli-only` (`-CliOnly` on Windows). The archive is a `.tar.gz` for macOS and Linux and a `.zip` for Windows. See [Install](install.md#download-it-yourself). Keep `ignis` and `bi` in the same folder, and put that folder on your `PATH`. `bi` finds `ignis` next to itself, and starts it when it needs it.
 
 Check that they work:
 
@@ -31,12 +31,20 @@ ignis stop                       # stop it
 | --- | --- |
 | `start [--model <model>] [--json]` | Starts the service, detached, and prints its status. If it is already running, it says so and prints the status. |
 | `stop` | Stops the service. |
+| `enable` | Starts the background service when you log in. This is the **Start at login** switch in **Settings, Engine**. |
+| `disable` | Stops starting the service at login. |
 | `status [--json]` | Shows the service: version, process, uptime, the local API address, and the models loaded. Exits with code 1 when it is not running. |
 | `logs [-n <lines>] [-f]` | Prints the service log. `-n` or `--lines` sets how many lines (50 by default). `-f` or `--follow` keeps printing what is added until you press Ctrl+C. |
 | `run [--model <model>]` | Runs the service in the foreground. This is what `start` launches. |
 | `serve [--port <port>] [--model <model>]` | Runs the service in the foreground and serves the local API on a port, whatever the settings say. It refuses to run while the background service is running. |
 
-`--json` prints the status as JSON. The log file is `~/Library/Application Support/Bouncer Ignis/logs/daemon.log`.
+`--json` prints the status as JSON. The log file is `logs/daemon.log` inside Ignis's data folder:
+
+| System | Log file |
+| --- | --- |
+| macOS | `~/Library/Application Support/Bouncer Ignis/logs/daemon.log` |
+| Windows | `%APPDATA%\Bouncer Ignis\logs\daemon.log` |
+| Linux | `~/.config/Bouncer Ignis/logs/daemon.log` |
 
 ### Models
 
@@ -74,7 +82,7 @@ Tables and JSON go to standard output. Progress and messages go to standard erro
 
 | Command | What it does |
 | --- | --- |
-| `self-update [--check] [--version <version>] [--pre] [-y]` | Checks get-ignis's releases for a newer Ignis, downloads it, checks it against `SHA256SUMS`, and installs it over this copy: the whole app when `ignis` runs from inside it, or `ignis` and `bi` where they are. `--check` only shows your version and the newest one. `--version` installs a specific release. `--pre` allows prereleases. `-y` or `--yes` installs without asking. See [Updates](updates.md). |
+| `self-update [--check] [--version <version>] [--pre] [-y]` | Checks get-ignis's releases for a newer Ignis, downloads it, checks it against `SHA256SUMS`, and installs it over this copy on macOS: the whole app when `ignis` runs from inside it, or `ignis` and `bi` where they are. `--check` only shows your version and the newest one. `--version` installs a specific release. `--pre` allows prereleases. `-y` or `--yes` installs without asking. On Windows and Linux, run the install command again instead. See [Updates](updates.md). |
 
 ## bi
 
@@ -126,12 +134,13 @@ Start and end a message with `"""` to write more than one line, or press <kbd>Al
 
 | Variable | What it does |
 | --- | --- |
-| `IGNIS_USER_DATA_DIR` | Use this folder instead of `~/Library/Application Support/Bouncer Ignis` for Ignis's settings, chats and logs. |
-| `BOUNCER_USER_DATA_DIR` | Use this folder instead of `~/Library/Application Support/Bouncer` for the model library. |
+| `IGNIS_USER_DATA_DIR` | Use this folder instead of the default for Ignis's settings, chats and logs. The default is `~/Library/Application Support/Bouncer Ignis` on macOS, `%APPDATA%\Bouncer Ignis` on Windows and `~/.config/Bouncer Ignis` on Linux. |
+| `BOUNCER_USER_DATA_DIR` | Use this folder instead of the default for the model library. The default is `~/Library/Application Support/Bouncer` on macOS, `%APPDATA%\Bouncer` on Windows and `~/.config/Bouncer` on Linux. |
 | `HF_TOKEN` | A Hugging Face token for gated models, sent only to Hugging Face. |
 | `BOUNCER_BCR_INDEX` | Read the package index from another address. |
 | `IGNIS_UPDATE_API` | Read releases from another address instead of `https://api.github.com`, for testing `self-update`. |
 | `IGNIS_HIDDEN` | Keep the service's desktop notifications off, for test runs. |
+| `XDG_CONFIG_HOME` | Linux: the folder that holds `Bouncer Ignis` and `Bouncer`, instead of `~/.config`. |
 
 The service reads these when it starts. If you set one, stop the service with `ignis stop` first, with the same variables set.
 

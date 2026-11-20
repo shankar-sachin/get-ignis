@@ -1,6 +1,12 @@
 # Settings
 
-Open Settings with <kbd>⌘</kbd> <kbd>,</kbd> or from the left bar. It has four sections: **Appearance**, **Engine**, **Hardware** and **About**. Changes apply at once and are saved in `~/Library/Application Support/Bouncer Ignis/settings.json`.
+Open Settings with <kbd>⌘</kbd> <kbd>,</kbd> or from the left bar. It has four sections: **Appearance**, **Engine**, **Hardware** and **About**. Changes apply at once and are saved in `settings.json` in Ignis's data folder:
+
+| System | Settings file |
+| --- | --- |
+| macOS | `~/Library/Application Support/Bouncer Ignis/settings.json` |
+| Windows | `%APPDATA%\Bouncer Ignis\settings.json` |
+| Linux | `~/.config/Bouncer Ignis/settings.json` |
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="images/settings-obsidian.png"><source media="(prefers-color-scheme: light)" srcset="images/settings-light.png"><img src="images/settings-light.png" alt="Settings" /></picture>
 
@@ -8,7 +14,7 @@ Open Settings with <kbd>⌘</kbd> <kbd>,</kbd> or from the left bar. It has four
 
 | Setting | What it does |
 | --- | --- |
-| **Theme** | **System**, **Light**, **Graphite** (soft dark gray) or **Obsidian** (pitch black). System follows macOS. |
+| **Theme** | **System**, **Light**, **Graphite** (soft dark gray) or **Obsidian** (pitch black). System follows your operating system. |
 | **Accent** | The color for buttons and highlights. Ignis red is the default. Others: signal, slate, mono, ember, glacier, ultraviolet and lime. Every accent passes AA contrast in every theme. |
 | **High contrast** | Stronger secondary text and borders. |
 
@@ -23,7 +29,17 @@ The top of this section is the **Ignis service** card. It shows whether the serv
 - **Loaded**: each loaded model and its state.
 - **Log**: the path of the service log.
 
-Below the card:
+Below the card is the **Startup** group, then the **Models** group.
+
+### Startup
+
+| Setting | What it does |
+| --- | --- |
+| **Start at login** | Starts the Ignis service when you log in. Routines run on time and a model is ready, even before you open the app. Off by default. |
+
+It adds a login item: a LaunchAgent on macOS (`~/Library/LaunchAgents/com.bouncer.ignis.service.plist`), the `Run` key in the registry on Windows, and an autostart entry on Linux (`~/.config/autostart/bouncer-ignis.desktop`). `ignis enable` and `ignis disable` turn the same login item on and off. See [Terminal commands](cli.md#service).
+
+### Models
 
 | Setting | What it does |
 | --- | --- |
@@ -34,13 +50,13 @@ Below the card:
 
 ## Hardware
 
-Shows what Ignis sees: your **Processor** and cores, **Memory** in use and free, and **Graphics**. On Apple silicon it notes that memory is unified with the GPU. The fit labels in the Marketplace come from these numbers.
+Shows what Ignis sees: your **Processor** and cores, **Memory** in use and free, and **Graphics**. On Apple silicon it notes that memory is unified with the GPU. On Windows and Linux, models run on the CPU for now. The fit labels in the Marketplace come from these numbers.
 
 ## About
 
 Shows the version, and where Ignis keeps its data (**Ignis data**) and your **Model library**.
 
-**Updates** checks for a newer version the first time you open About. When one is out, **Download and install** downloads and checks it, then **Restart now** opens the new version. See [Updates](updates.md).
+**Updates** checks for a newer version the first time you open About. When one is out on macOS, **Download and install** downloads and checks it, then **Restart now** opens the new version. On Windows and Linux, it says a new version is out, and you install it by running the install command again. See [Updates](updates.md).
 
 ## Related
 
