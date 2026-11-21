@@ -1,5 +1,6 @@
 #!/bin/sh
-# Bouncer Ignis installer for macOS on Apple silicon. POSIX sh: works with sh, bash, zsh and dash.
+# Bouncer Ignis installer for macOS (Apple silicon and Intel) and Linux (x64). POSIX sh: works with sh, bash,
+# zsh and dash. Windows has install.ps1.
 #
 # Releases are public in github.com/shankar-sachin/get-ignis (the source stays private):
 #   curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh
@@ -22,20 +23,27 @@ TOKEN=""
 TMP=""
 TAG=""
 VER=""
+OS=""
+ARCH=""
 
 usage() {
   cat <<'EOT'
 Usage: install.sh [options]
 
 Installs the latest Bouncer Ignis release, or a given version, from the public releases at
-shankar-sachin/get-ignis. macOS on Apple silicon only for now.
+shankar-sachin/get-ignis, on macOS (Apple silicon or Intel) or Linux (x64). Windows: install.ps1.
 
-  Default     Downloads Bouncer-Ignis-<version>-arm64-mac.zip, checks it against SHA256SUMS and installs
+  macOS       Downloads Bouncer-Ignis-<version>-<arch>-mac.zip, checks it against SHA256SUMS and installs
               "Bouncer Ignis.app" into /Applications (or ~/Applications when that is not writable, or
               with --user). Removes the quarantine flag and links the ignis and bi commands into
-              ~/.local/bin. Never uses sudo.
-  --cli-only  Downloads ignis-cli-<version>-macos-arm64.tar.gz instead and installs just ignis and bi
+              ~/.local/bin.
+  Linux       Downloads Bouncer-Ignis-<version>-linux-x64.tar.gz, checks it, unpacks it into
+              ~/.local/share/bouncer-ignis/app, adds Bouncer Ignis to the app menu and links ignis, bi
+              and bouncer-ignis into ~/.local/bin. (The .deb on the releases page installs system-wide.)
+  --cli-only  Downloads ignis-cli-<version>-<os>-<arch>.tar.gz instead and installs just ignis and bi
               (into ~/.local/share/bouncer-ignis/cli, linked from ~/.local/bin). No app.
+
+Never uses sudo.
 
 Options:
   --version <tag>  Install a specific version: v0.2.0, ignis-v0.2.0 or 0.2.0 (default: latest).
@@ -93,26 +101,30 @@ parse_args() {
   done
 }
 
-# Ignis has a macOS Apple silicon build only. Anything else gets a clear message and exit code 1.
+# Builds: macOS arm64 and x64, Linux x64. Anything else gets a clear message and exit code 1.
 check_platform() {
   case "$(uname -s)" in
-    Darwin) ;;
+    Darwin)
+      OS=macos
+      if is_apple_silicon; then ARCH=arm64; else ARCH=x64; fi
+      ;;
     Linux)
-      echo "Bouncer Ignis is not available for Linux yet." >&2
-      echo "It runs on macOS with Apple silicon today. Watch $RELEASES_URL for new builds." >&2
-      exit 1
+      OS=linux
+      case "$(uname -m)" in
+        x86_64 | amd64) ARCH=x64 ;;
+        *)
+          echo "Bouncer Ignis is not available for Linux on $(uname -m) yet: Linux builds are x64 only." >&2
+          echo "Watch $RELEASES_URL for new builds." >&2
+          exit 1
+          ;;
+      esac
       ;;
     *)
-      echo "Bouncer Ignis is not available for $(uname -s) yet." >&2
-      echo "It runs on macOS with Apple silicon today. Watch $RELEASES_URL for new builds." >&2
+      echo "Bouncer Ignis is not available for $(uname -s). It runs on macOS, Windows (install.ps1) and Linux." >&2
+      echo "See $RELEASES_URL" >&2
       exit 1
       ;;
   esac
-  if ! is_apple_silicon; then
-    echo "Bouncer Ignis is not available for Intel Macs yet." >&2
-    echo "It runs on macOS with Apple silicon today. Watch $RELEASES_URL for new builds." >&2
-    exit 1
-  fi
 }
 
 is_apple_silicon() {
@@ -214,7 +226,7 @@ link_one() {
   link="$BIN_DIR/$name"
   if [ -L "$link" ]; then
     case "$(readlink "$link")" in
-      *"/Bouncer Ignis.app/Contents/MacOS/$name" | */bouncer-ignis/cli/"$name") ;;
+      *"/Bouncer Ignis.app/Contents/MacOS/$name" | */bouncer-ignis/cli/"$name" | */bouncer-ignis/app/*) ;;
       *)
         warn "$link already exists and isn't Ignis's, so the $name command was not set up"
         return 0
@@ -234,17 +246,23 @@ link_cli() {
   mkdir -p "$BIN_DIR"
   link_one ignis "$1/ignis"
   link_one bi "$1/bi"
+  profile="~/.zprofile"
+  [ "$OS" = linux ] && profile="~/.profile"
   case ":$PATH:" in
     *":$BIN_DIR:"*) echo "terminal: run ignis --help, or bi \"hello\"" ;;
     *)
-      echo "note: $BIN_DIR is not on your PATH. Add this line to ~/.zprofile, then open a new terminal:"
+      echo "note: $BIN_DIR is not on your PATH. Add this line to $profile, then open a new terminal:"
       echo "  export PATH=\"\$HOME/.local/bin:\$PATH\""
       ;;
   esac
 }
 
 install_app() {
-  zip="Bouncer-Ignis-$VER-arm64-mac.zip"
+  if [ "$OS" = linux ]; then
+    install_linux_app
+    return
+  fi
+  zip="Bouncer-Ignis-$VER-$ARCH-mac.zip"
   asset_exists "$zip" || die "$TAG has no macOS build named $zip. Available: $(asset_list)"
 
   dest_dir="/Applications"
@@ -285,16 +303,66 @@ install_app() {
   echo "If macOS still blocks the first launch (unsigned build): right-click Bouncer Ignis, choose Open."
 }
 
+# Linux: the portable app folder in ~/.local/share/bouncer-ignis/app, a menu entry and the commands.
+install_linux_app() {
+  tarball="Bouncer-Ignis-$VER-linux-$ARCH.tar.gz"
+  asset_exists "$tarball" || die "$TAG has no Linux build named $tarball. Available: $(asset_list)"
+  app_dir="$HOME/.local/share/bouncer-ignis/app"
+  apps_dir="${XDG_DATA_HOME:-$HOME/.local/share}/applications"
+
+  if [ "$DRY_RUN" -eq 1 ]; then
+    echo "would download: $tarball and SHA256SUMS"
+    echo "would verify: sha256 against SHA256SUMS (stops on a mismatch)"
+    echo "would install: $app_dir (replacing any existing copy)"
+    echo "would add to the app menu: $apps_dir/bouncer-ignis.desktop"
+    echo "would link: $BIN_DIR/ignis, $BIN_DIR/bi and $BIN_DIR/bouncer-ignis -> $app_dir/"
+    echo "would not use sudo"
+    return 0
+  fi
+
+  fetch_verified "$tarball"
+  mkdir -p "$TMP/linux"
+  tar -xzf "$TMP/$tarball" -C "$TMP/linux" || die "could not unpack $tarball"
+  src=$(find "$TMP/linux" -type f -name ignis-app | head -n 1)
+  [ -n "$src" ] || die "ignis-app was not found inside $tarball"
+  src=$(dirname "$src")
+
+  if [ -x "$app_dir/ignis" ]; then
+    "$app_dir/ignis" stop >/dev/null 2>&1 || true
+  fi
+  rm -rf "$app_dir"
+  mkdir -p "$(dirname "$app_dir")"
+  mv "$src" "$app_dir"
+  info "installed $app_dir"
+
+  mkdir -p "$apps_dir"
+  cat >"$apps_dir/bouncer-ignis.desktop" <<EOT
+[Desktop Entry]
+Type=Application
+Name=Bouncer Ignis
+Comment=Run local models: chat, code and bots
+Exec="$app_dir/ignis-app" %U
+Icon=$app_dir/bouncer-ignis.png
+Terminal=false
+Categories=Development;Utility;
+StartupWMClass=ignis-app
+EOT
+  info "added Bouncer Ignis to the app menu"
+  link_cli "$app_dir"
+  link_one bouncer-ignis "$app_dir/ignis-app"
+  echo "launch with: bouncer-ignis, or Bouncer Ignis in the app menu"
+}
+
 install_cli() {
-  tarball="ignis-cli-$VER-macos-arm64.tar.gz"
+  tarball="ignis-cli-$VER-$OS-$ARCH.tar.gz"
   asset_exists "$tarball" || die "$TAG has no terminal build named $tarball. Available: $(asset_list)"
   cli_dir="$HOME/.local/share/bouncer-ignis/cli"
 
   if [ "$DRY_RUN" -eq 1 ]; then
     echo "would download: $tarball and SHA256SUMS"
-    echo "would verify: shasum -a 256 against SHA256SUMS (stops on a mismatch)"
+    echo "would verify: sha256 against SHA256SUMS (stops on a mismatch)"
     echo "would install: $cli_dir/ignis and $cli_dir/bi"
-    echo "would remove quarantine: xattr -dr com.apple.quarantine \"$cli_dir\""
+    [ "$OS" = macos ] && echo "would remove quarantine: xattr -dr com.apple.quarantine \"$cli_dir\""
     echo "would link: $BIN_DIR/ignis and $BIN_DIR/bi -> $cli_dir/"
     echo "would not use sudo"
     return 0
@@ -312,7 +380,9 @@ install_cli() {
   cp "$ignis_bin" "$cli_dir/ignis"
   cp "$bi_bin" "$cli_dir/bi"
   chmod 755 "$cli_dir/ignis" "$cli_dir/bi"
-  xattr -dr com.apple.quarantine "$cli_dir" 2>/dev/null || true
+  if [ "$OS" = macos ]; then
+    xattr -dr com.apple.quarantine "$cli_dir" 2>/dev/null || true
+  fi
   info "installed ignis and bi in $cli_dir"
   link_cli "$cli_dir"
 }
@@ -330,7 +400,7 @@ main() {
   fi
   info "repository: $REPO"
   resolve_release
-  info "release: $TAG"
+  info "release: $TAG ($OS $ARCH)"
 
   if [ "$CLI_ONLY" -eq 1 ]; then
     install_cli

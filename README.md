@@ -5,14 +5,14 @@
 <h1 align="center">Bouncer Ignis</h1>
 
 <p align="center">
-  <strong>The lean edition of Bouncer. Open models on your own Mac, with a fraction of the memory.</strong><br />
+  <strong>The lean edition of Bouncer. Open models on your own computer, with a fraction of the memory.</strong><br />
   Local-first. No account. No telemetry.
 </p>
 
 <p align="center">
   <a href="https://github.com/shankar-sachin/get-ignis/releases/latest"><img src="https://img.shields.io/github/v/release/shankar-sachin/get-ignis?label=latest&color=be3a1c" alt="Latest release" /></a>
   <a href="https://github.com/shankar-sachin/get-ignis/releases"><img src="https://img.shields.io/github/downloads/shankar-sachin/get-ignis/total?color=be3a1c" alt="Downloads" /></a>
-  <img src="https://img.shields.io/badge/macOS%20%C2%B7%20Apple%20silicon-555" alt="macOS on Apple silicon" />
+  <img src="https://img.shields.io/badge/macOS%20%C2%B7%20Windows%20%C2%B7%20Linux-555" alt="macOS, Windows and Linux" />
   <img src="https://img.shields.io/badge/built%20with-Rust-be3a1c?logo=rust&logoColor=white" alt="Built with Rust" />
 </p>
 
@@ -28,26 +28,39 @@
   <picture><source media="(prefers-color-scheme: dark)" srcset="site/assets/screens/hero-obsidian.jpg"><source media="(prefers-color-scheme: light)" srcset="site/assets/screens/hero-light.jpg"><img src="site/assets/screens/hero-light.jpg" width="820" alt="Bouncer Ignis Chat with a finished reply" /></picture>
 </p>
 
-Bouncer Ignis is a local-first AI app for macOS on Apple silicon. It is the lean edition of [Bouncer](https://bouncer-ai.pages.dev): the same model library and the same look, written in Rust, so it uses a fraction of the memory of the Electron app. It finds open models on Hugging Face, checks they fit your Mac, and runs them with [llama.cpp](https://github.com/ggml-org/llama.cpp) (GGUF), built into the app. Your chats, files and models stay on your computer.
+Bouncer Ignis is a local-first AI app for macOS (Apple silicon and Intel), Windows and Linux. It is the lean edition of [Bouncer](https://bouncer-ai.pages.dev): the same model library and the same look, written in Rust, so it uses a fraction of the memory of the Electron app. It finds open models on Hugging Face, checks they fit your computer, and runs them with [llama.cpp](https://github.com/ggml-org/llama.cpp) (GGUF), built into the app. Your chats, files and models stay on your computer.
 
 ## Install
+
+On macOS and Linux:
 
 ```sh
 curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh
 ```
 
-The installer fetches the [latest release](https://github.com/shankar-sachin/get-ignis/releases/latest) and checks it against its `SHA256SUMS`. Add `--dry-run` (`| sh -s -- --dry-run`) to see what would happen first, `--version v0.3.0` to pick a version, or `--cli-only` to install only the `ignis` and `bi` commands. It runs on macOS only for now.
+On Windows, in PowerShell:
+
+```powershell
+irm https://bouncer-ai.pages.dev/ignis/install.ps1 | iex
+```
+
+The installer fetches the [latest release](https://github.com/shankar-sachin/get-ignis/releases/latest) and checks it against its `SHA256SUMS`. On macOS and Linux, add `--dry-run` (`| sh -s -- --dry-run`) to see what would happen first, `--version v0.3.0` to pick a version, or `--cli-only` to install only the `ignis` and `bi` commands. On Windows the options are `-DryRun`, `-Version` and `-CliOnly`; see the [install guide](docs/install.md).
 
 Prefer to download it yourself? Every file is on the [releases page](https://github.com/shankar-sachin/get-ignis/releases):
 
 | File | What it is |
 | --- | --- |
-| `Bouncer-Ignis-<version>-arm64.dmg` | The app, as a disk image |
-| `Bouncer-Ignis-<version>-arm64-mac.zip` | The app, as a zip |
-| `ignis-cli-<version>-macos-arm64.tar.gz` | Just the `ignis` and `bi` commands |
-| `SHA256SUMS` | Checksums for the files above |
+| `Bouncer-Ignis-<version>-arm64.dmg`, `Bouncer-Ignis-<version>-x64.dmg` | macOS: the app, as a disk image (Apple silicon, Intel) |
+| `Bouncer-Ignis-<version>-arm64-mac.zip`, `Bouncer-Ignis-<version>-x64-mac.zip` | macOS: the app, as a zip |
+| `ignis-cli-<version>-macos-arm64.tar.gz`, `ignis-cli-<version>-macos-x64.tar.gz` | macOS: just the `ignis` and `bi` commands |
+| `Bouncer-Ignis-Setup-<version>-x64.exe` | Windows: the installer, per user, no admin rights |
+| `ignis-cli-<version>-windows-x64.zip` | Windows: just the `ignis` and `bi` commands |
+| `bouncer-ignis_<version>_amd64.deb` | Linux: the app, system-wide, for Debian and Ubuntu |
+| `Bouncer-Ignis-<version>-linux-x64.tar.gz` | Linux: the app, as a portable folder |
+| `ignis-cli-<version>-linux-x64.tar.gz` | Linux: just the `ignis` and `bi` commands |
+| `SHA256SUMS` | Checksums for every file |
 
-Builds are not signed or notarized yet. If macOS blocks the app, right-click it and choose Open, or run `xattr -dr com.apple.quarantine "/Applications/Bouncer Ignis.app"`. More in the [install guide](docs/install.md) and the [system requirements](docs/system-requirements.md).
+Builds are not signed or notarized yet. If macOS blocks the app, right-click it and choose Open, or run `xattr -dr com.apple.quarantine "/Applications/Bouncer Ignis.app"`. On Windows, SmartScreen may warn about the installer: click **More info**, then **Run anyway**. More in the [install guide](docs/install.md) and the [system requirements](docs/system-requirements.md).
 
 ## What's inside
 
@@ -56,7 +69,7 @@ Builds are not signed or notarized yet. If macOS blocks the app, right-click it 
 | **[Chat](docs/chat.md)** | Talk with a model you have loaded. Chats are saved, and you can rename or delete them. |
 | **[Code](docs/code.md)** | Point a model at a folder. It reads, edits and runs commands, and you review each change as a diff. Four modes, checkpoints to rewind, a terminal panel, `@` file mentions and compaction. |
 | **[Rebound](docs/rebound.md)** | Your own bots, each with a name, a personality, a face and a memory. Routines run a bot on a schedule. Connectors let a bot read a folder or a calendar, and it can read its replies aloud. |
-| **[Marketplace](docs/models.md)** | Search GGUF models on Hugging Face, check how each file fits your Mac, and download them. Your [library](docs/models.md#the-library) is shared with Bouncer. |
+| **[Marketplace](docs/models.md)** | Search GGUF models on Hugging Face, check how each file fits your computer, and download them. Your [library](docs/models.md#the-library) is shared with Bouncer. |
 | **[Settings](docs/settings.md)** | Theme, accent, the service, how many models load at once, and your hardware. |
 | **[`ignis`](docs/cli.md)** | The background service and model manager. It runs llama.cpp and serves the [local API](docs/local-api.md). |
 | **[`bi`](docs/cli.md#bi)** | Chat in the terminal, full screen or one reply at a time. |
@@ -74,7 +87,7 @@ Ignis is not a replacement for Bouncer. It does less, on purpose.
 | --- | --- | --- |
 | Built with | Rust | Electron |
 | Memory use | A fraction | Larger |
-| Systems | macOS, Apple silicon | macOS, Windows, Linux |
+| Systems | macOS (Apple silicon, Intel), Windows, Linux | macOS, Windows, Linux |
 | Chat, Code, Rebound, Marketplace | Yes | Yes |
 | Model library and packages | Shared with Bouncer | Shared with Ignis |
 | Local API (OpenAI, Anthropic and Ollama shapes) | Yes, on port 3333 | Yes, on port 3133 |
@@ -84,7 +97,7 @@ Ignis is not a replacement for Bouncer. It does less, on purpose.
 | Voice input | No | Yes |
 | Plugins | No | Yes |
 | Accounts and sync | No | Optional |
-| Updates | Built in (Settings, About or `ignis self-update`) | Built in |
+| Updates | Built in on macOS (Settings, About or `ignis self-update`). On Windows and Linux, run the install command again. | Built in |
 
 You can install both. See [Ignis with Bouncer](docs/with-bouncer.md).
 
@@ -130,7 +143,7 @@ The full list is in the [privacy policy](PRIVACY.md) and [docs/privacy.md](docs/
 
 ## Reporting bugs
 
-[Open an issue](https://github.com/shankar-sachin/get-ignis/issues/new/choose) and pick a template. Include your Ignis version (**Settings, About**, or `ignis --version`), your Mac, and the service log lines around the error (`ignis logs`), with any private text removed. For security problems, see [SECURITY.md](SECURITY.md) and don't open a public issue.
+[Open an issue](https://github.com/shankar-sachin/get-ignis/issues/new/choose) and pick a template. Include your Ignis version (**Settings, About**, or `ignis --version`), your system, and the service log lines around the error (`ignis logs`), with any private text removed. For security problems, see [SECURITY.md](SECURITY.md) and don't open a public issue.
 
 ## About this repository
 

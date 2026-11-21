@@ -98,7 +98,7 @@
       return;
     }
     var version = versionOf(release);
-    setBadge('v' + version + ' · macOS, Apple silicon', true);
+    setBadge('v' + version + ' · macOS, Windows, Linux', true);
     if (btn && assets.dmg && isMac()) {
       btn.setAttribute('href', assets.dmg.browser_download_url);
     }

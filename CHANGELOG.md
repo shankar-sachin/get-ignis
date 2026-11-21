@@ -1,5 +1,28 @@
 # Changelog
 
+## v0.5.0
+
+2026-11-21. Ignis now runs on Windows, Linux and Intel Macs, and Code can run tasks on a schedule.
+
+### New
+
+- **Windows**: a per-user installer for Windows 10 and 11 (x64), and an `ignis-cli` zip. No admin rights needed. It adds a Start menu entry and puts `ignis` and `bi` on your `PATH`.
+- **Linux**: a `.deb` (`sudo apt install ./bouncer-ignis_<version>_amd64.deb`), a portable `.tar.gz` and an `ignis-cli` `.tar.gz`, all for x64. They need glibc 2.35 or newer, for example Ubuntu 22.04, Debian 12 or Fedora 36.
+- **Intel Macs**: the same `.dmg`, `.zip` and `ignis-cli` files, with `x64` in the name.
+- **Start at login**: a switch in **Settings, Engine**, in a new **Startup** group. Routines run on time and a model is ready, even before you open the app. Off by default. `ignis enable` and `ignis disable` turn it on and off from Terminal.
+- **Install script for Windows and Linux**: `irm https://bouncer-ai.pages.dev/ignis/install.ps1 | iex` in PowerShell, and the existing `install.sh` now also installs on Linux. Both check the release's `SHA256SUMS`. See [Install](docs/install.md).
+- **Scheduled tasks in Code**: run a prompt with the Code agent in a folder, on demand or on a schedule, in the background service. Each run works in its own worktree, and you review and merge it. See [Code](docs/code.md#scheduled-tasks).
+
+### Fixed
+
+- Long text in one-line fields, like a folder path, no longer spills past the field. It scrolls to the cursor.
+
+### Notes
+
+- Windows and Linux run models on the CPU for now. GPU support there is planned.
+- Windows does not show routine notifications yet.
+- Self-update works on macOS. On Windows and Linux, **About** says a new version is out, and you install it by running the install command again. Intel Macs get their first self-update from the release after the one that adds them. See [Updates](docs/updates.md).
+
 ## v0.4.0
 
 2026-11-18. A refreshed look, and Ignis can update itself.
