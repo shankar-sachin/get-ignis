@@ -11,6 +11,7 @@ Ignis now runs on Windows, Linux and Intel Macs.
 - **Intel Macs**: the same `.dmg`, `.zip` and `ignis-cli` files, with `x64` in the name.
 - **Start at login**: a switch in **Settings, Engine**, in a new **Startup** group. Routines run on time and a model is ready, even before you open the app. Off by default. `ignis enable` and `ignis disable` turn it on and off from Terminal.
 - **Install script for Windows and Linux**: `irm https://bouncer-ai.pages.dev/ignis/install.ps1 | iex` in PowerShell, and the existing `install.sh` now also installs on Linux. Both check the release's `SHA256SUMS`. See [Install](docs/install.md).
+- **Scheduled tasks in Code**: run a prompt with the Code agent in a folder, on demand or on a schedule, in the background service. Each run works in its own worktree, and you review and merge it. See [Code](docs/code.md#scheduled-tasks).
 
 ### Notes
 
