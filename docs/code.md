@@ -63,6 +63,75 @@ Click **Terminal** in the title bar, or press <kbd>Ctrl</kbd> <kbd>`</kbd>, to o
 
 If the folder has a file named `BOUNCER.md`, Code reads it into its instructions. Use it for notes on how to build, test and style the project. It is the same file Bouncer reads. The text is treated as notes, not as commands.
 
+## Scheduled tasks
+
+A scheduled task runs a prompt with the Code agent in one folder, on demand or on a schedule. Click **Scheduled** in the left rail, or on Code's start screen, to open Scheduled tasks. The header says *N waiting for you* when runs need you.
+
+### Create a task
+
+Click **New task**. The dialog is **New scheduled task**, or **Edit scheduled task** when you change one.
+
+| Field | What it does |
+| --- | --- |
+| **Folder** | The folder the task works in. Click **Choose folder** to pick it. |
+| **What to do** | The prompt. |
+| **Name (optional)** | A name for the task. It defaults to one taken from the prompt. |
+| **Mode** | **Plan**, **Manual**, **Accept edits** or **Autopilot**. These are the same modes as a Code session, and **Accept edits** is the default. See [Modes](#modes). |
+| **When** | **On demand**, **Once**, **Daily** or **Repeat**. See below. |
+| **Run in a separate worktree** | On by default. See below. |
+
+**When** has four choices:
+
+- **On demand**: the task runs only when you run it.
+- **Once**: runs at a date and time you pick.
+- **Daily**: runs at a time you pick, on the days of the week you pick. With no days chosen, it runs every day.
+- **Repeat**: runs every N minutes.
+
+With **Run in a separate worktree** on, each run starts from the last commit on its own branch, and your folder stays untouched until you merge. A folder that isn't a git repository is edited in place.
+
+The footer says *Runs never commit. You review each one.* Click **Create** to save the task.
+
+### Manage tasks
+
+The list shows each task with its title, mode, folder, its schedule or **Paused**, the next run and the last run. Each task has these actions:
+
+| Action | What it does |
+| --- | --- |
+| **Run now** | Starts a run right away. |
+| **Edit** | Opens the task in the dialog. |
+| **Pause** / **Resume** | Stops or restarts its schedule. |
+| Trash icon | Deletes the task, after a confirmation. |
+
+### When tasks run
+
+Runs happen in the background service (`ignis`), so they run on time even when the app is closed, as [Rebound](rebound.md) routines do. To keep the service running, turn on **Start at login** in **Settings, Engine**.
+
+- Runs use the model the service has loaded. With none loaded, the run fails with *No model is loaded. Load one in Ignis, then run this task again.*
+- One task runs at a time.
+- A task that came due while the service was off runs once when it's next running. Missed runs aren't repeated.
+- When a run finishes, Ignis sends a notification, *Scheduled: <task name>*.
+
+### Review a run
+
+Each run shows its status and when it started. The status is **Running**, **Needs you**, **Done**, **Failed** or **Stopped**. Open a run to see its changed files, with the lines added and removed.
+
+| Action | What it does |
+| --- | --- |
+| **Merge** | Applies the run's changes to your folder as staged changes. Nothing is committed. If a file has unstaged edits, Ignis asks you to stage, commit or stash them first. Conflicting files get conflict markers. |
+| **Discard** | Removes the run's changes and its worktree. For a run without a worktree, it rewinds the folder. |
+| **Open session** | Opens the run as a Code session. Each run is saved as an ordinary Code session for that folder. |
+| **Stop** | Stops the run while it is running. |
+
+### When a run needs you
+
+Depending on the mode, a step can need your approval. The run then waits and shows **Needs you**, with the step, for example a command to run, and **Approve** and **Deny**. Ignis sends a notification, *A scheduled task needs you*. On Windows there are no notifications yet. The run waits until you answer.
+
+If the service stops while a run is going, the run is marked stopped with *Ignis quit while this ran*.
+
+### Where tasks are saved
+
+Tasks and runs are saved in Ignis's data folder, in `code/scheduled.json`. Run worktrees are kept in Ignis's data folder under `rebound/worktrees`, on branches named `rebound/<id>`, until you merge or discard them.
+
 ## Related
 
 - [Models](models.md)

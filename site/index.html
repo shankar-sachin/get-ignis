@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bouncer Ignis</title>
-  <meta name="description" content="Bouncer Ignis is the lean Rust edition of Bouncer for Apple silicon Macs. Chat, code and Rebound bots with local models, in a fraction of the memory." />
+  <meta name="description" content="Bouncer Ignis is the lean Rust edition of Bouncer for Mac, Windows and Linux. Chat, code and Rebound bots with local models, in a fraction of the memory." />
   <meta name="theme-color" content="#000000" />
   <link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
@@ -12,14 +12,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Bouncer Ignis" />
   <meta property="og:title" content="Bouncer Ignis" />
-  <meta property="og:description" content="Bouncer Ignis is the lean Rust edition of Bouncer for Apple silicon Macs. Chat, code and Rebound bots with local models, in a fraction of the memory." />
+  <meta property="og:description" content="Bouncer Ignis is the lean Rust edition of Bouncer for Mac, Windows and Linux. Chat, code and Rebound bots with local models, in a fraction of the memory." />
   <meta property="og:url" content="https://bouncer-ai.pages.dev/ignis/" />
   <meta property="og:image" content="https://bouncer-ai.pages.dev/ignis/assets/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Bouncer Ignis" />
-  <meta name="twitter:description" content="Bouncer Ignis is the lean Rust edition of Bouncer for Apple silicon Macs. Chat, code and Rebound bots with local models, in a fraction of the memory." />
+  <meta name="twitter:description" content="Bouncer Ignis is the lean Rust edition of Bouncer for Mac, Windows and Linux. Chat, code and Rebound bots with local models, in a fraction of the memory." />
   <meta name="twitter:image" content="https://bouncer-ai.pages.dev/ignis/assets/og.png" />
 
   <!-- Theme before first paint: a stored choice wins, otherwise the system preference decides in CSS. -->
@@ -71,18 +71,22 @@
       <div class="wrap hero-grid">
         <div>
           <img class="hero-logo" src="assets/brand/ignis-fire.png" width="150" height="137" alt="Bouncer Ignis logo" />
-          <span class="badge" id="release-badge"><span class="dot" aria-hidden="true"></span><span data-release-label>macOS, Apple silicon</span></span>
+          <span class="badge" id="release-badge"><span class="dot" aria-hidden="true"></span><span data-release-label>macOS, Windows, Linux</span></span>
           <h1 id="hero-title">Local AI, with the weight taken off.</h1>
-          <p class="lede">Ignis is the lean Rust edition of Bouncer. It has the same model library and the same look, in a fraction of the memory. Chat, code and build Rebound bots with models that run on your Mac.</p>
+          <p class="lede">Ignis is the lean Rust edition of Bouncer. It has the same model library and the same look, in a fraction of the memory. Chat, code and build Rebound bots with models that run on your computer.</p>
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" id="hero-download" href="https://github.com/shankar-sachin/get-ignis/releases">Download for macOS</a>
+          <a class="btn btn-primary" id="hero-download" href="https://github.com/shankar-sachin/get-ignis/releases">Download</a>
           <div class="cmd" style="max-width: 640px; width: 100%; text-align: left">
             <code>curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh</code>
             <button class="btn copy" type="button" data-copy="curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh">Copy</button>
           </div>
-          <p class="small">macOS on Apple silicon for now. Intel, Windows and Linux are <a href="#faq">coming</a>.</p>
+          <div class="cmd" style="max-width: 640px; width: 100%; text-align: left">
+            <code>irm https://bouncer-ai.pages.dev/ignis/install.ps1 | iex</code>
+            <button class="btn copy" type="button" data-copy="irm https://bouncer-ai.pages.dev/ignis/install.ps1 | iex">Copy</button>
+          </div>
+          <p class="small">The first command is for macOS and Linux, the second for Windows PowerShell.</p>
         </div>
 
         <figure class="hero-shot" style="margin: 0">
@@ -157,7 +161,7 @@
         <div class="feature is-flip">
           <div class="copy-col">
             <span class="kicker">Marketplace</span>
-            <h3 style="margin-top: 8px; font-size: 1.5rem">Find models that fit your Mac.</h3>
+            <h3 style="margin-top: 8px; font-size: 1.5rem">Find models that fit your computer.</h3>
             <p>Browse GGUF models from Hugging Face. Ignis reads each model and estimates the memory it needs, so you see what will run before you download.</p>
             <ul>
               <li>A fit estimate for every quant</li>
@@ -199,7 +203,7 @@
           <img class="rebound-logo" src="assets/brand/rebound-256.png" width="96" height="96" alt="Rebound logo" />
           <span class="eyebrow">Rebound</span>
           <h2 id="rebound-title">Bots that keep their own context.</h2>
-          <p>Rebound is where bots live. Each has a name, instructions and a memory. Routines run them on a schedule, and the reply reaches you as a desktop notification. Connectors let a bot read one folder or one calendar file, and any reply can be read aloud with your Mac's voices.</p>
+          <p>Rebound is where bots live. Each has a name, instructions and a memory. Routines run them on a schedule, and the reply reaches you as a desktop notification. Connectors let a bot read one folder or one calendar file, and any reply can be read aloud with your system's voices.</p>
         </div>
       </div>
     </section>
@@ -222,7 +226,7 @@
               <tr><td>IDE, Studio, Lab, workflows</td><td>No</td><td>Yes</td></tr>
               <tr><td>MLX models, accounts and sync</td><td>No</td><td>Yes</td></tr>
               <tr><td>Memory</td><td>A fraction of Bouncer's</td><td>An Electron app</td></tr>
-              <tr><td>Platforms</td><td>macOS, Apple silicon</td><td>macOS, Windows, Linux</td></tr>
+              <tr><td>Platforms</td><td>macOS, Windows, Linux</td><td>macOS, Windows, Linux</td></tr>
             </tbody>
           </table>
         </div>
@@ -297,16 +301,24 @@
         <div class="section-head">
           <span class="eyebrow">Download</span>
           <h2 id="download-title">Install in one line.</h2>
-          <p>The installer picks the newest release and checks it against SHA256SUMS before it installs. It puts <code>Bouncer Ignis.app</code> in Applications and links <code>ignis</code> and <code>bi</code> into <code>~/.local/bin</code>.</p>
+          <p>The installer picks the newest release and checks it against SHA256SUMS before it installs. On macOS it puts <code>Bouncer Ignis.app</code> in Applications and links <code>ignis</code> and <code>bi</code> into <code>~/.local/bin</code>. On Linux it installs the app into your home folder with an app menu entry. On Windows it runs the per-user installer.</p>
         </div>
 
         <div class="install-grid">
           <div class="card">
-            <h3>macOS, Apple silicon</h3>
+            <h3>macOS and Linux</h3>
             <p class="hint">Terminal, bash or zsh</p>
             <div class="cmd">
               <code>curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh</code>
               <button class="btn copy" type="button" data-copy="curl -fsSL https://bouncer-ai.pages.dev/ignis/install.sh | sh">Copy</button>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Windows 10 and 11, x64</h3>
+            <p class="hint">PowerShell</p>
+            <div class="cmd">
+              <code>irm https://bouncer-ai.pages.dev/ignis/install.ps1 | iex</code>
+              <button class="btn copy" type="button" data-copy="irm https://bouncer-ai.pages.dev/ignis/install.ps1 | iex">Copy</button>
             </div>
           </div>
           <div class="card">
@@ -326,11 +338,11 @@
           <p class="hint">Release tags look like <code>ignis-v0.3.0</code>.</p>
           <ul class="platforms">
             <li>
-              <span><span class="name">macOS, Apple silicon: disk image</span><span class="file" data-file="dmg">Bouncer-Ignis-0.3.0-arm64.dmg</span></span>
+              <span><span class="name">macOS: disk image</span><span class="file" data-file="dmg">Bouncer-Ignis-0.3.0-arm64.dmg</span></span>
               <span class="state" data-state="dmg"><a href="https://github.com/shankar-sachin/get-ignis/releases">Releases</a></span>
             </li>
             <li>
-              <span><span class="name">macOS, Apple silicon: zip</span><span class="file" data-file="zip">Bouncer-Ignis-0.3.0-arm64-mac.zip</span></span>
+              <span><span class="name">macOS: zip</span><span class="file" data-file="zip">Bouncer-Ignis-0.3.0-arm64-mac.zip</span></span>
               <span class="state" data-state="zip"><a href="https://github.com/shankar-sachin/get-ignis/releases">Releases</a></span>
             </li>
             <li>
@@ -338,8 +350,20 @@
               <span class="state" data-state="cli"><a href="https://github.com/shankar-sachin/get-ignis/releases">Releases</a></span>
             </li>
             <li>
-              <span><span class="name">Intel Mac, Windows, Linux</span></span>
-              <span class="state">Coming soon</span>
+              <span><span class="name">macOS on Intel: the same files with x64 in the name</span></span>
+              <span class="state"><a href="https://github.com/shankar-sachin/get-ignis/releases">Releases</a></span>
+            </li>
+            <li>
+              <span><span class="name">Windows: installer</span><span class="file">Bouncer-Ignis-Setup-&lt;version&gt;-x64.exe</span></span>
+              <span class="state"><a href="https://github.com/shankar-sachin/get-ignis/releases">Releases</a></span>
+            </li>
+            <li>
+              <span><span class="name">Linux: .deb</span><span class="file">bouncer-ignis_&lt;version&gt;_amd64.deb</span></span>
+              <span class="state"><a href="https://github.com/shankar-sachin/get-ignis/releases">Releases</a></span>
+            </li>
+            <li>
+              <span><span class="name">Linux: portable folder</span><span class="file">Bouncer-Ignis-&lt;version&gt;-linux-x64.tar.gz</span></span>
+              <span class="state"><a href="https://github.com/shankar-sachin/get-ignis/releases">Releases</a></span>
             </li>
           </ul>
           <p class="download-note"><a href="https://github.com/shankar-sachin/get-ignis/releases">All releases on GitHub</a></p>
@@ -347,7 +371,7 @@
 
         <div class="card" style="margin-top: 20px">
           <h3>Unsigned builds</h3>
-          <p class="hint" style="margin-bottom: 0">Builds are not signed or notarized yet, so macOS can show a warning on first launch. See the <a href="#faq">FAQ</a> for the way past it.</p>
+          <p class="hint" style="margin-bottom: 0">Builds are not signed or notarized yet, so macOS can show a warning on first launch, and Windows SmartScreen can warn about the installer (click More info, then Run anyway). See the <a href="#faq">FAQ</a> for the way past it on macOS.</p>
         </div>
       </div>
     </section>
@@ -362,7 +386,7 @@
         <div class="faq">
           <details>
             <summary>Ignis or Bouncer?</summary>
-            <div><p>Pick Ignis if you want chat, code and Rebound in a small app that stays light on memory. Pick <a href="https://bouncer-ai.pages.dev">Bouncer</a> if you want the IDE, Studio, Lab, workflows, MLX models, or Windows and Linux. They share one model library, so installing both costs you no extra downloads.</p></div>
+            <div><p>Pick Ignis if you want chat, code and Rebound in a small app that stays light on memory. Pick <a href="https://bouncer-ai.pages.dev">Bouncer</a> if you want the IDE, Studio, Lab, workflows or MLX models. They share one model library, so installing both costs you no extra downloads.</p></div>
           </details>
           <details>
             <summary>Why does macOS warn me?</summary>
@@ -373,11 +397,11 @@
           </details>
           <details>
             <summary>What is coming?</summary>
-            <div><p>Intel Macs, Windows and Linux builds. Since 0.4.0, Ignis updates itself from Settings, About, or with <code>ignis self-update</code>.</p></div>
+            <div><p>GPU support on Windows and Linux, where models run on the CPU for now. Since 0.4.0, Ignis updates itself on macOS from Settings, About, or with <code>ignis self-update</code>.</p></div>
           </details>
           <details>
             <summary>Which models can I run?</summary>
-            <div><p>Any GGUF model from Hugging Face that fits your Mac. The Marketplace shows a fit estimate for each quant before you download it.</p></div>
+            <div><p>Any GGUF model from Hugging Face that fits your computer. The Marketplace shows a fit estimate for each quant before you download it.</p></div>
           </details>
           <details>
             <summary>Does it work offline?</summary>
